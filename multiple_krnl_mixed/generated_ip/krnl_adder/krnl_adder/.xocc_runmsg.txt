@@ -1,0 +1,2 @@
+running HLS transform to generate kernel.xml from kernel sources files for kernel: krnl_adder
+Log file:/home/yanghui/Desktop/myProject/multiple_krnl/_xocc_compile_krnl_vadd_krnl_vadd.hw_emu.dir/impl/kernels/krnl_adder/krnl_adder/krnl_adder_hls_transform.log

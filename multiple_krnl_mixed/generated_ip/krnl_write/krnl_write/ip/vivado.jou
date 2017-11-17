@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.2_sdx (64-bit)
+# SW Build 1972098 on Wed Aug 23 11:34:38 MDT 2017
+# IP Build 1971916 on Wed Aug 23 13:11:02 MDT 2017
+# Start of session at: Thu Nov 16 23:15:46 2017
+# Process ID: 17791
+# Current directory: /home/yanghui/Desktop/myProject/multiple_krnl/_xocc_compile_krnl_vadd_krnl_vadd.hw_emu.dir/impl/kernels/krnl_write/krnl_write/solution_OCL_REGION_0/impl/ip
+# Command line: vivado -notrace -mode batch -source run_ippack.tcl
+# Log file: /home/yanghui/Desktop/myProject/multiple_krnl/_xocc_compile_krnl_vadd_krnl_vadd.hw_emu.dir/impl/kernels/krnl_write/krnl_write/solution_OCL_REGION_0/impl/ip/vivado.log
+# Journal file: /home/yanghui/Desktop/myProject/multiple_krnl/_xocc_compile_krnl_vadd_krnl_vadd.hw_emu.dir/impl/kernels/krnl_write/krnl_write/solution_OCL_REGION_0/impl/ip/vivado.jou
+#-----------------------------------------------------------
+source run_ippack.tcl -notrace

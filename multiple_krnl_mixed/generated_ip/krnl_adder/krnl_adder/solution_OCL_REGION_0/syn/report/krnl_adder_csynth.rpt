@@ -1,0 +1,237 @@
+
+
+================================================================
+== Vivado HLS Report for 'krnl_adder'
+================================================================
+* Date:           Thu Nov 16 23:15:45 2017
+
+* Version:        2017.2 (Build 1909853 on Wed Aug 23 11:51:38 MDT 2017)
+* Project:        krnl_adder
+* Solution:       solution_OCL_REGION_0
+* Product family: virtex7
+* Target device:  xc7vx690tffg1157-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   5.00|      1.51|        1.35|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    ?|    ?|         2|          1|          1|     ?|    yes   |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  |
++-----------------+---------+-------+--------+--------+
+|DSP              |        -|      -|       -|       -|
+|Expression       |        -|      -|       0|     273|
+|FIFO             |        -|      -|       -|       -|
+|Instance         |        0|      -|     284|     488|
+|Memory           |        -|      -|       -|       -|
+|Multiplexer      |        -|      -|       -|      81|
+|Register         |        -|      -|     135|       -|
++-----------------+---------+-------+--------+--------+
+|Total            |        0|      0|     419|     842|
++-----------------+---------+-------+--------+--------+
+|Available        |     2940|   3600|  866400|  433200|
++-----------------+---------+-------+--------+--------+
+|Utilization (%)  |        0|      0|   ~0   |   ~0   |
++-----------------+---------+-------+--------+--------+
+
++ Detail: 
+    * Instance: 
+    +----------------------------+--------------------------+---------+-------+-----+-----+
+    |          Instance          |          Module          | BRAM_18K| DSP48E|  FF | LUT |
+    +----------------------------+--------------------------+---------+-------+-----+-----+
+    |krnl_adder_control_s_axi_U  |krnl_adder_control_s_axi  |        0|      0|  284|  488|
+    +----------------------------+--------------------------+---------+-------+-----+-----+
+    |Total                       |                          |        0|      0|  284|  488|
+    +----------------------------+--------------------------+---------+-------+-----+-----+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |p_reg2mem_0_i_i_fu_157_p2         |     +    |      0|  0|  38|          31|           1|
+    |pipe_c_TDATA                      |     +    |      0|  0|  39|          32|          32|
+    |ap_block_pp0_stage0_01001         |    and   |      0|  0|   8|           1|           1|
+    |ap_block_state3_io                |    and   |      0|  0|   8|           1|           1|
+    |ap_condition_363                  |    and   |      0|  0|   8|           1|           1|
+    |ap_predicate_op36_read_state2     |    and   |      0|  0|   8|           1|           1|
+    |ap_predicate_op41_read_state2     |    and   |      0|  0|   8|           1|           1|
+    |ap_predicate_op47_read_state2     |    and   |      0|  0|   8|           1|           1|
+    |ap_predicate_op52_read_state2     |    and   |      0|  0|   8|           1|           1|
+    |icmp5_fu_195_p2                   |   icmp   |      0|  0|  18|          31|           1|
+    |icmp8_fu_217_p2                   |   icmp   |      0|  0|  18|          25|           1|
+    |icmp_fu_173_p2                    |   icmp   |      0|  0|  18|          31|           1|
+    |tmp_1_fu_152_p2                   |   icmp   |      0|  0|  18|          32|          32|
+    |tmp_3_fu_179_p2                   |   icmp   |      0|  0|  18|          32|           1|
+    |tmp_5_fu_201_p2                   |   icmp   |      0|  0|  18|          32|           1|
+    |ap_block_pp0_stage0_11001         |    or    |      0|  0|   8|           1|           1|
+    |ap_block_state2_pp0_stage0_iter0  |    or    |      0|  0|   8|           1|           1|
+    |ap_enable_pp0                     |    xor   |      0|  0|   8|           1|           2|
+    |ap_enable_reg_pp0_iter1           |    xor   |      0|  0|   8|           1|           2|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                             |          |      0|  0| 273|         257|          83|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------------+----+-----------+-----+-----------+
+    |             Name             | LUT| Input Size| Bits| Total Bits|
+    +------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                     |  21|          4|    1|          4|
+    |ap_enable_reg_pp0_iter1       |  15|          3|    1|          3|
+    |ap_sig_ioackin_pipe_c_TREADY  |   9|          2|    1|          2|
+    |i_0_reg2mem10_0_i_i_reg_127   |   9|          2|   31|         62|
+    |pipe_a_TDATA_blk_n            |   9|          2|    1|          2|
+    |pipe_b_TDATA_blk_n            |   9|          2|    1|          2|
+    |pipe_c_TDATA_blk_n            |   9|          2|    1|          2|
+    +------------------------------+----+-----------+-----+-----------+
+    |Total                         |  81|         17|   37|         77|
+    +------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------+----+----+-----+-----------+
+    |             Name             | FF | LUT| Bits| Const Bits|
+    +------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                     |   3|   0|    3|          0|
+    |ap_enable_reg_pp0_iter0       |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1       |   1|   0|    1|          0|
+    |ap_reg_ioackin_pipe_c_TREADY  |   1|   0|    1|          0|
+    |ap_rst_n_inv                  |   1|   0|    1|          0|
+    |arg_n_elements_reg_248        |  32|   0|   32|          0|
+    |i_0_reg2mem10_0_i_i_reg_127   |  31|   0|   31|          0|
+    |icmp8_reg_278                 |   1|   0|    1|          0|
+    |p_01_fu_80                    |  32|   0|   32|          0|
+    |p_0_fu_76                     |  32|   0|   32|          0|
+    +------------------------------+----+----+-----+-----------+
+    |Total                         | 135|   0|  135|          0|
+    +------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+--------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  | Source Object|    C Type    |
++-----------------------+-----+-----+------------+--------------+--------------+
+|s_axi_control_AWVALID  |  in |    1|    s_axi   |    control   |    pointer   |
+|s_axi_control_AWREADY  | out |    1|    s_axi   |    control   |    pointer   |
+|s_axi_control_AWADDR   |  in |    6|    s_axi   |    control   |    pointer   |
+|s_axi_control_WVALID   |  in |    1|    s_axi   |    control   |    pointer   |
+|s_axi_control_WREADY   | out |    1|    s_axi   |    control   |    pointer   |
+|s_axi_control_WDATA    |  in |   32|    s_axi   |    control   |    pointer   |
+|s_axi_control_WSTRB    |  in |    4|    s_axi   |    control   |    pointer   |
+|s_axi_control_ARVALID  |  in |    1|    s_axi   |    control   |    pointer   |
+|s_axi_control_ARREADY  | out |    1|    s_axi   |    control   |    pointer   |
+|s_axi_control_ARADDR   |  in |    6|    s_axi   |    control   |    pointer   |
+|s_axi_control_RVALID   | out |    1|    s_axi   |    control   |    pointer   |
+|s_axi_control_RREADY   |  in |    1|    s_axi   |    control   |    pointer   |
+|s_axi_control_RDATA    | out |   32|    s_axi   |    control   |    pointer   |
+|s_axi_control_RRESP    | out |    2|    s_axi   |    control   |    pointer   |
+|s_axi_control_BVALID   | out |    1|    s_axi   |    control   |    pointer   |
+|s_axi_control_BREADY   |  in |    1|    s_axi   |    control   |    pointer   |
+|s_axi_control_BRESP    | out |    2|    s_axi   |    control   |    pointer   |
+|ap_clk                 |  in |    1| ap_ctrl_hs |  krnl_adder  | return value |
+|ap_rst_n               |  in |    1| ap_ctrl_hs |  krnl_adder  | return value |
+|interrupt              | out |    1| ap_ctrl_hs |  krnl_adder  | return value |
+|m_axi_gmem_AWVALID     | out |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_AWREADY     |  in |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_AWADDR      | out |   64|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_AWID        | out |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_AWLEN       | out |    8|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_AWSIZE      | out |    3|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_AWBURST     | out |    2|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_AWLOCK      | out |    2|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_AWCACHE     | out |    4|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_AWPROT      | out |    3|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_AWQOS       | out |    4|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_AWREGION    | out |    4|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_AWUSER      | out |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_WVALID      | out |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_WREADY      |  in |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_WDATA       | out |   32|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_WSTRB       | out |    4|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_WLAST       | out |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_WID         | out |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_WUSER       | out |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_ARVALID     | out |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_ARREADY     |  in |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_ARADDR      | out |   64|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_ARID        | out |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_ARLEN       | out |    8|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_ARSIZE      | out |    3|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_ARBURST     | out |    2|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_ARLOCK      | out |    2|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_ARCACHE     | out |    4|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_ARPROT      | out |    3|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_ARQOS       | out |    4|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_ARREGION    | out |    4|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_ARUSER      | out |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_RVALID      |  in |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_RREADY      | out |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_RDATA       |  in |   32|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_RLAST       |  in |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_RID         |  in |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_RUSER       |  in |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_RRESP       |  in |    2|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_BVALID      |  in |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_BREADY      | out |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_BRESP       |  in |    2|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_BID         |  in |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_BUSER       |  in |    1|    m_axi   |     gmem     |    pointer   |
+|pipe_a_TDATA           |  in |   32|    axis    |    pipe_a    |    pointer   |
+|pipe_a_TVALID          |  in |    1|    axis    |    pipe_a    |    pointer   |
+|pipe_a_TREADY          | out |    1|    axis    |    pipe_a    |    pointer   |
+|pipe_a_count           |  in |   32|   ap_none  | pipe_a_count |    scalar    |
+|pipe_b_TDATA           |  in |   32|    axis    |    pipe_b    |    pointer   |
+|pipe_b_TVALID          |  in |    1|    axis    |    pipe_b    |    pointer   |
+|pipe_b_TREADY          | out |    1|    axis    |    pipe_b    |    pointer   |
+|pipe_b_count           |  in |   32|   ap_none  | pipe_b_count |    scalar    |
+|pipe_c_TDATA           | out |   32|    axis    |    pipe_c    |    pointer   |
+|pipe_c_TVALID          | out |    1|    axis    |    pipe_c    |    pointer   |
+|pipe_c_TREADY          |  in |    1|    axis    |    pipe_c    |    pointer   |
+|pipe_c_count           |  in |   32|   ap_none  | pipe_c_count |    scalar    |
++-----------------------+-----+-----+------------+--------------+--------------+
+

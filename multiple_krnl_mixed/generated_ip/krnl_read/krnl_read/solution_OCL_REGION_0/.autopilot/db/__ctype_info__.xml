@@ -1,0 +1,103 @@
+<InterfaceSummary>
+<RtlPorts>
+<name>gmem</name>
+<CType>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>pipe_a</name>
+<CType>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>pipe_a_count</name>
+<CType>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>pipe_b</name>
+<CType>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>pipe_b_count</name>
+<CType>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>a</name>
+<CType>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>64</PhysicalWidth>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>b</name>
+<CType>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>64</PhysicalWidth>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>n_elements</name>
+<CType>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>p_xcl_gv_pipe_a</name>
+<CType>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>64</PhysicalWidth>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>p_xcl_gv_pipe_b</name>
+<CType>
+<TypeName>unsigned int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>64</PhysicalWidth>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+</InterfaceSummary>
+

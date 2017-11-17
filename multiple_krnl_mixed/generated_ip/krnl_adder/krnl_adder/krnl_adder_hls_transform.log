@@ -1,0 +1,10 @@
+================================================================
+  Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC
+  Version 2017.2
+  Build 1909853 on Wed Aug 23 11:51:38 MDT 2017
+  Copyright (C) 1986-2017 Xilinx, Inc. All Rights Reserved.
+================================================================
+INFO: [HLS 200-10] Running '/home/yanghui/Xilinx/SDx/2017.2/Vivado_HLS/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'yanghui' on host 'Alienware' (Linux_x86_64 version 4.10.0-38-generic) on Thu Nov 16 23:15:37 HKT 2017
+INFO: [HLS 200-10] On os Ubuntu 16.04.3 LTS
+INFO: [HLS 200-10] In directory '/home/yanghui/Desktop/myProject/multiple_krnl/_xocc_compile_krnl_vadd_krnl_vadd.hw_emu.dir/impl/kernels/krnl_adder/krnl_adder'

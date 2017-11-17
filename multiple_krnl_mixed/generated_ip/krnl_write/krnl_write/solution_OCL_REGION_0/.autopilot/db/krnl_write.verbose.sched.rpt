@@ -1,0 +1,1852 @@
+
+
+================================================================
+== Vivado HLS Report for 'krnl_write'
+================================================================
+* Date:           Thu Nov 16 23:15:44 2017
+
+* Version:        2017.2 (Build 1909853 on Wed Aug 23 11:51:38 MDT 2017)
+* Project:        krnl_write
+* Solution:       solution_OCL_REGION_0
+* Product family: virtex7
+* Target device:  xc7vx690tffg1157-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   5.00|      3.65|        1.35|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    ?|    ?|         2|          1|          1|     ?|    yes   |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 136
+* Pipeline: 1
+  Pipeline-0: II = 1, D = 2, States = { 3 4 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	5  / (!tmp_2)
+	4  / (tmp_2)
+4 --> 
+	3  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / true
+34 --> 
+	35  / true
+35 --> 
+	36  / true
+36 --> 
+	37  / true
+37 --> 
+	38  / true
+38 --> 
+	39  / true
+39 --> 
+	40  / true
+40 --> 
+	41  / true
+41 --> 
+	42  / true
+42 --> 
+	43  / true
+43 --> 
+	44  / true
+44 --> 
+	45  / true
+45 --> 
+	46  / true
+46 --> 
+	47  / true
+47 --> 
+	48  / true
+48 --> 
+	49  / true
+49 --> 
+	50  / true
+50 --> 
+	51  / true
+51 --> 
+	52  / true
+52 --> 
+	53  / true
+53 --> 
+	54  / true
+54 --> 
+	55  / true
+55 --> 
+	56  / true
+56 --> 
+	57  / true
+57 --> 
+	58  / true
+58 --> 
+	59  / true
+59 --> 
+	60  / true
+60 --> 
+	61  / true
+61 --> 
+	62  / true
+62 --> 
+	63  / true
+63 --> 
+	64  / true
+64 --> 
+	65  / true
+65 --> 
+	66  / true
+66 --> 
+	67  / true
+67 --> 
+	68  / true
+68 --> 
+	69  / true
+69 --> 
+	70  / true
+70 --> 
+	71  / true
+71 --> 
+	72  / true
+72 --> 
+	73  / true
+73 --> 
+	74  / true
+74 --> 
+	75  / true
+75 --> 
+	76  / true
+76 --> 
+	77  / true
+77 --> 
+	78  / true
+78 --> 
+	79  / true
+79 --> 
+	80  / true
+80 --> 
+	81  / true
+81 --> 
+	82  / true
+82 --> 
+	83  / true
+83 --> 
+	84  / true
+84 --> 
+	85  / true
+85 --> 
+	86  / true
+86 --> 
+	87  / true
+87 --> 
+	88  / true
+88 --> 
+	89  / true
+89 --> 
+	90  / true
+90 --> 
+	91  / true
+91 --> 
+	92  / true
+92 --> 
+	93  / true
+93 --> 
+	94  / true
+94 --> 
+	95  / true
+95 --> 
+	96  / true
+96 --> 
+	97  / true
+97 --> 
+	98  / true
+98 --> 
+	99  / true
+99 --> 
+	100  / true
+100 --> 
+	101  / true
+101 --> 
+	102  / true
+102 --> 
+	103  / true
+103 --> 
+	104  / true
+104 --> 
+	105  / true
+105 --> 
+	106  / true
+106 --> 
+	107  / true
+107 --> 
+	108  / true
+108 --> 
+	109  / true
+109 --> 
+	110  / true
+110 --> 
+	111  / true
+111 --> 
+	112  / true
+112 --> 
+	113  / true
+113 --> 
+	114  / true
+114 --> 
+	115  / true
+115 --> 
+	116  / true
+116 --> 
+	117  / true
+117 --> 
+	118  / true
+118 --> 
+	119  / true
+119 --> 
+	120  / true
+120 --> 
+	121  / true
+121 --> 
+	122  / true
+122 --> 
+	123  / true
+123 --> 
+	124  / true
+124 --> 
+	125  / true
+125 --> 
+	126  / true
+126 --> 
+	127  / true
+127 --> 
+	128  / true
+128 --> 
+	129  / true
+129 --> 
+	130  / true
+130 --> 
+	131  / true
+131 --> 
+	132  / true
+132 --> 
+	133  / true
+133 --> 
+	134  / true
+134 --> 
+	135  / true
+135 --> 
+	136  / true
+136 --> 
+* FSM state operations: 
+
+ <State 1>: 1.00ns
+ST_1: p_0 (7)  [1/1] 0.00ns
+:0  %p_0 = alloca i32
+
+ST_1: c_read (19)  [1/1] 1.00ns  loc: krnl_write_compute_unit:42
+:12  %c_read = call i64 @_ssdm_op_Read.s_axilite.i64P(i64* %c)
+
+ST_1: tmp (20)  [1/1] 0.00ns  loc: krnl_write_compute_unit:43
+:13  %tmp = call i62 @_ssdm_op_PartSelect.i62.i64.i32.i32(i64 %c_read, i32 2, i32 63)
+
+ST_1: arg_n_elements (21)  [1/1] 1.00ns  loc: krnl_write_compute_unit:43
+:14  %arg_n_elements = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %n_elements)
+
+ST_1: tmp_6 (22)  [1/1] 0.00ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+:15  %tmp_6 = zext i62 %tmp to i64
+
+ST_1: gmem_addr (23)  [1/1] 0.00ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+:16  %gmem_addr = getelementptr inbounds i32 addrspace(1)* %gmem, i64 %tmp_6, !xcl.port !3
+
+
+ <State 2>: 3.65ns
+ST_2: StgValue_143 (8)  [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecBitsMap(i32 addrspace(1)* %gmem), !map !11
+
+ST_2: StgValue_144 (9)  [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecBitsMap(i32 addrspace(4)* %pipe_c), !map !17
+
+ST_2: StgValue_145 (10)  [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecBitsMap(i32 %pipe_c_count), !map !21
+
+ST_2: StgValue_146 (11)  [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_SpecBitsMap(i64* %c), !map !27
+
+ST_2: StgValue_147 (12)  [1/1] 0.00ns
+:5  call void (...)* @_ssdm_op_SpecBitsMap(i32* %n_elements), !map !31
+
+ST_2: StgValue_148 (13)  [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_SpecBitsMap(i64* %p_xcl_gv_pipe_c), !map !35
+
+ST_2: StgValue_149 (14)  [1/1] 0.00ns
+:7  call void (...)* @_ssdm_op_SpecTopModule([11 x i8]* @krnl_write_str)
+
+ST_2: StgValue_150 (15)  [1/1] 0.00ns  loc: krnl_write_compute_unit:55
+:8  call void (...)* @_ssdm_op_SpecInterface(i32 addrspace(4)* %pipe_c, [5 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+ST_2: StgValue_151 (16)  [1/1] 0.00ns  loc: krnl_write_compute_unit:56
+:9  call void (...)* @_ssdm_op_SpecInterface(i32 addrspace(1)* %gmem, [6 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 128, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+ST_2: StgValue_152 (17)  [1/1] 0.00ns  loc: krnl_write_compute_unit:57
+:10  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+ST_2: StgValue_153 (18)  [1/1] 0.00ns  loc: krnl_write_compute_unit:58
+:11  call void (...)* @_ssdm_op_SpecInterface(i64* %c, i32* %n_elements, i64* %p_xcl_gv_pipe_c, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+ST_2: gmem_addr_1_wr_req (24)  [1/1] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+:17  %gmem_addr_1_wr_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32 addrspace(1)* %gmem_addr, i32 %arg_n_elements)
+
+ST_2: StgValue_155 (25)  [1/1] 0.85ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:52
+:18  br label %1
+
+
+ <State 3>: 1.50ns
+ST_3: i_0_reg2mem5_0_i_i (27)  [1/1] 0.00ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:52
+:0  %i_0_reg2mem5_0_i_i = phi i31 [ 0, %0 ], [ %p_reg2mem_0_i_i, %__xcl_read_pipe.exit.i.i ]
+
+ST_3: i_0_reg2mem5_0_i_i_cast (28)  [1/1] 0.00ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:52
+:1  %i_0_reg2mem5_0_i_i_cast = zext i31 %i_0_reg2mem5_0_i_i to i32
+
+ST_3: tmp_2 (29)  [1/1] 1.26ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:52
+:2  %tmp_2 = icmp slt i32 %i_0_reg2mem5_0_i_i_cast, %arg_n_elements
+
+ST_3: p_reg2mem_0_i_i (30)  [1/1] 1.50ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:52
+:3  %p_reg2mem_0_i_i = add i31 %i_0_reg2mem5_0_i_i, 1
+
+ST_3: StgValue_160 (31)  [1/1] 0.00ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:52
+:4  br i1 %tmp_2, label %2, label %__AESL_call_work_item_NA4.exit
+
+ST_3: pipe_c_count_read (34)  [1/1] 0.00ns
+:1  %pipe_c_count_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %pipe_c_count) nounwind
+
+ST_3: tmp_1 (35)  [1/1] 0.00ns
+:2  %tmp_1 = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %pipe_c_count_read, i32 1, i32 31)
+
+ST_3: icmp (36)  [1/1] 1.26ns
+:3  %icmp = icmp eq i31 %tmp_1, 0
+
+ST_3: StgValue_164 (37)  [1/1] 0.00ns
+:4  br i1 %icmp, label %4, label %3
+
+ST_3: pipe_c_read (39)  [1/1] 0.00ns
+:0  %pipe_c_read = call i32 @_ssdm_op_Read.axis.volatile.i32P(i32 addrspace(4)* %pipe_c)
+
+ST_3: StgValue_166 (40)  [1/1] 0.85ns
+:1  store i32 %pipe_c_read, i32* %p_0
+
+ST_3: pipe_c_count_read_1 (43)  [1/1] 0.00ns
+:0  %pipe_c_count_read_1 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %pipe_c_count) nounwind
+
+ST_3: tmp_4 (44)  [1/1] 1.26ns
+:1  %tmp_4 = icmp eq i32 %pipe_c_count_read_1, 0
+
+ST_3: StgValue_169 (45)  [1/1] 0.00ns
+:2  br i1 %tmp_4, label %__xcl_read_pipe.exit.i.i, label %5
+
+ST_3: pipe_c_read_1 (47)  [1/1] 0.00ns
+:0  %pipe_c_read_1 = call i32 @_ssdm_op_Read.axis.volatile.i32P(i32 addrspace(4)* %pipe_c)
+
+ST_3: StgValue_171 (48)  [1/1] 0.85ns
+:1  store i32 %pipe_c_read_1, i32* %p_0
+
+
+ <State 4>: 3.65ns
+ST_4: StgValue_172 (33)  [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str5)
+
+ST_4: StgValue_173 (41)  [1/1] 0.00ns
+:2  br label %__xcl_read_pipe.exit.i.i
+
+ST_4: StgValue_174 (49)  [1/1] 0.00ns
+:2  br label %__xcl_read_pipe.exit.i.i
+
+ST_4: p_0_load (51)  [1/1] 0.00ns
+__xcl_read_pipe.exit.i.i:0  %p_0_load = load i32* %p_0
+
+ST_4: StgValue_176 (52)  [1/1] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__xcl_read_pipe.exit.i.i:1  call void @_ssdm_op_Write.m_axi.i32P(i32 addrspace(1)* %gmem_addr, i32 %p_0_load, i4 -1)
+
+ST_4: StgValue_177 (53)  [1/1] 0.00ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:52
+__xcl_read_pipe.exit.i.i:2  br label %1
+
+
+ <State 5>: 3.65ns
+ST_5: gmem_addr_1_wr_resp (55)  [132/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 6>: 3.65ns
+ST_6: gmem_addr_1_wr_resp (55)  [131/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 7>: 3.65ns
+ST_7: gmem_addr_1_wr_resp (55)  [130/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 8>: 3.65ns
+ST_8: gmem_addr_1_wr_resp (55)  [129/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 9>: 3.65ns
+ST_9: gmem_addr_1_wr_resp (55)  [128/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 10>: 3.65ns
+ST_10: gmem_addr_1_wr_resp (55)  [127/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 11>: 3.65ns
+ST_11: gmem_addr_1_wr_resp (55)  [126/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 12>: 3.65ns
+ST_12: gmem_addr_1_wr_resp (55)  [125/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 13>: 3.65ns
+ST_13: gmem_addr_1_wr_resp (55)  [124/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 14>: 3.65ns
+ST_14: gmem_addr_1_wr_resp (55)  [123/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 15>: 3.65ns
+ST_15: gmem_addr_1_wr_resp (55)  [122/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 16>: 3.65ns
+ST_16: gmem_addr_1_wr_resp (55)  [121/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 17>: 3.65ns
+ST_17: gmem_addr_1_wr_resp (55)  [120/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 18>: 3.65ns
+ST_18: gmem_addr_1_wr_resp (55)  [119/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 19>: 3.65ns
+ST_19: gmem_addr_1_wr_resp (55)  [118/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 20>: 3.65ns
+ST_20: gmem_addr_1_wr_resp (55)  [117/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 21>: 3.65ns
+ST_21: gmem_addr_1_wr_resp (55)  [116/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 22>: 3.65ns
+ST_22: gmem_addr_1_wr_resp (55)  [115/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 23>: 3.65ns
+ST_23: gmem_addr_1_wr_resp (55)  [114/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 24>: 3.65ns
+ST_24: gmem_addr_1_wr_resp (55)  [113/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 25>: 3.65ns
+ST_25: gmem_addr_1_wr_resp (55)  [112/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 26>: 3.65ns
+ST_26: gmem_addr_1_wr_resp (55)  [111/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 27>: 3.65ns
+ST_27: gmem_addr_1_wr_resp (55)  [110/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 28>: 3.65ns
+ST_28: gmem_addr_1_wr_resp (55)  [109/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 29>: 3.65ns
+ST_29: gmem_addr_1_wr_resp (55)  [108/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 30>: 3.65ns
+ST_30: gmem_addr_1_wr_resp (55)  [107/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 31>: 3.65ns
+ST_31: gmem_addr_1_wr_resp (55)  [106/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 32>: 3.65ns
+ST_32: gmem_addr_1_wr_resp (55)  [105/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 33>: 3.65ns
+ST_33: gmem_addr_1_wr_resp (55)  [104/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 34>: 3.65ns
+ST_34: gmem_addr_1_wr_resp (55)  [103/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 35>: 3.65ns
+ST_35: gmem_addr_1_wr_resp (55)  [102/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 36>: 3.65ns
+ST_36: gmem_addr_1_wr_resp (55)  [101/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 37>: 3.65ns
+ST_37: gmem_addr_1_wr_resp (55)  [100/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 38>: 3.65ns
+ST_38: gmem_addr_1_wr_resp (55)  [99/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 39>: 3.65ns
+ST_39: gmem_addr_1_wr_resp (55)  [98/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 40>: 3.65ns
+ST_40: gmem_addr_1_wr_resp (55)  [97/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 41>: 3.65ns
+ST_41: gmem_addr_1_wr_resp (55)  [96/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 42>: 3.65ns
+ST_42: gmem_addr_1_wr_resp (55)  [95/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 43>: 3.65ns
+ST_43: gmem_addr_1_wr_resp (55)  [94/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 44>: 3.65ns
+ST_44: gmem_addr_1_wr_resp (55)  [93/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 45>: 3.65ns
+ST_45: gmem_addr_1_wr_resp (55)  [92/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 46>: 3.65ns
+ST_46: gmem_addr_1_wr_resp (55)  [91/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 47>: 3.65ns
+ST_47: gmem_addr_1_wr_resp (55)  [90/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 48>: 3.65ns
+ST_48: gmem_addr_1_wr_resp (55)  [89/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 49>: 3.65ns
+ST_49: gmem_addr_1_wr_resp (55)  [88/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 50>: 3.65ns
+ST_50: gmem_addr_1_wr_resp (55)  [87/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 51>: 3.65ns
+ST_51: gmem_addr_1_wr_resp (55)  [86/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 52>: 3.65ns
+ST_52: gmem_addr_1_wr_resp (55)  [85/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 53>: 3.65ns
+ST_53: gmem_addr_1_wr_resp (55)  [84/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 54>: 3.65ns
+ST_54: gmem_addr_1_wr_resp (55)  [83/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 55>: 3.65ns
+ST_55: gmem_addr_1_wr_resp (55)  [82/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 56>: 3.65ns
+ST_56: gmem_addr_1_wr_resp (55)  [81/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 57>: 3.65ns
+ST_57: gmem_addr_1_wr_resp (55)  [80/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 58>: 3.65ns
+ST_58: gmem_addr_1_wr_resp (55)  [79/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 59>: 3.65ns
+ST_59: gmem_addr_1_wr_resp (55)  [78/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 60>: 3.65ns
+ST_60: gmem_addr_1_wr_resp (55)  [77/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 61>: 3.65ns
+ST_61: gmem_addr_1_wr_resp (55)  [76/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 62>: 3.65ns
+ST_62: gmem_addr_1_wr_resp (55)  [75/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 63>: 3.65ns
+ST_63: gmem_addr_1_wr_resp (55)  [74/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 64>: 3.65ns
+ST_64: gmem_addr_1_wr_resp (55)  [73/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 65>: 3.65ns
+ST_65: gmem_addr_1_wr_resp (55)  [72/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 66>: 3.65ns
+ST_66: gmem_addr_1_wr_resp (55)  [71/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 67>: 3.65ns
+ST_67: gmem_addr_1_wr_resp (55)  [70/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 68>: 3.65ns
+ST_68: gmem_addr_1_wr_resp (55)  [69/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 69>: 3.65ns
+ST_69: gmem_addr_1_wr_resp (55)  [68/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 70>: 3.65ns
+ST_70: gmem_addr_1_wr_resp (55)  [67/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 71>: 3.65ns
+ST_71: gmem_addr_1_wr_resp (55)  [66/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 72>: 3.65ns
+ST_72: gmem_addr_1_wr_resp (55)  [65/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 73>: 3.65ns
+ST_73: gmem_addr_1_wr_resp (55)  [64/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 74>: 3.65ns
+ST_74: gmem_addr_1_wr_resp (55)  [63/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 75>: 3.65ns
+ST_75: gmem_addr_1_wr_resp (55)  [62/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 76>: 3.65ns
+ST_76: gmem_addr_1_wr_resp (55)  [61/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 77>: 3.65ns
+ST_77: gmem_addr_1_wr_resp (55)  [60/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 78>: 3.65ns
+ST_78: gmem_addr_1_wr_resp (55)  [59/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 79>: 3.65ns
+ST_79: gmem_addr_1_wr_resp (55)  [58/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 80>: 3.65ns
+ST_80: gmem_addr_1_wr_resp (55)  [57/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 81>: 3.65ns
+ST_81: gmem_addr_1_wr_resp (55)  [56/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 82>: 3.65ns
+ST_82: gmem_addr_1_wr_resp (55)  [55/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 83>: 3.65ns
+ST_83: gmem_addr_1_wr_resp (55)  [54/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 84>: 3.65ns
+ST_84: gmem_addr_1_wr_resp (55)  [53/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 85>: 3.65ns
+ST_85: gmem_addr_1_wr_resp (55)  [52/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 86>: 3.65ns
+ST_86: gmem_addr_1_wr_resp (55)  [51/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 87>: 3.65ns
+ST_87: gmem_addr_1_wr_resp (55)  [50/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 88>: 3.65ns
+ST_88: gmem_addr_1_wr_resp (55)  [49/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 89>: 3.65ns
+ST_89: gmem_addr_1_wr_resp (55)  [48/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 90>: 3.65ns
+ST_90: gmem_addr_1_wr_resp (55)  [47/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 91>: 3.65ns
+ST_91: gmem_addr_1_wr_resp (55)  [46/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 92>: 3.65ns
+ST_92: gmem_addr_1_wr_resp (55)  [45/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 93>: 3.65ns
+ST_93: gmem_addr_1_wr_resp (55)  [44/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 94>: 3.65ns
+ST_94: gmem_addr_1_wr_resp (55)  [43/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 95>: 3.65ns
+ST_95: gmem_addr_1_wr_resp (55)  [42/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 96>: 3.65ns
+ST_96: gmem_addr_1_wr_resp (55)  [41/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 97>: 3.65ns
+ST_97: gmem_addr_1_wr_resp (55)  [40/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 98>: 3.65ns
+ST_98: gmem_addr_1_wr_resp (55)  [39/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 99>: 3.65ns
+ST_99: gmem_addr_1_wr_resp (55)  [38/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 100>: 3.65ns
+ST_100: gmem_addr_1_wr_resp (55)  [37/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 101>: 3.65ns
+ST_101: gmem_addr_1_wr_resp (55)  [36/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 102>: 3.65ns
+ST_102: gmem_addr_1_wr_resp (55)  [35/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 103>: 3.65ns
+ST_103: gmem_addr_1_wr_resp (55)  [34/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 104>: 3.65ns
+ST_104: gmem_addr_1_wr_resp (55)  [33/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 105>: 3.65ns
+ST_105: gmem_addr_1_wr_resp (55)  [32/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 106>: 3.65ns
+ST_106: gmem_addr_1_wr_resp (55)  [31/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 107>: 3.65ns
+ST_107: gmem_addr_1_wr_resp (55)  [30/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 108>: 3.65ns
+ST_108: gmem_addr_1_wr_resp (55)  [29/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 109>: 3.65ns
+ST_109: gmem_addr_1_wr_resp (55)  [28/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 110>: 3.65ns
+ST_110: gmem_addr_1_wr_resp (55)  [27/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 111>: 3.65ns
+ST_111: gmem_addr_1_wr_resp (55)  [26/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 112>: 3.65ns
+ST_112: gmem_addr_1_wr_resp (55)  [25/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 113>: 3.65ns
+ST_113: gmem_addr_1_wr_resp (55)  [24/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 114>: 3.65ns
+ST_114: gmem_addr_1_wr_resp (55)  [23/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 115>: 3.65ns
+ST_115: gmem_addr_1_wr_resp (55)  [22/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 116>: 3.65ns
+ST_116: gmem_addr_1_wr_resp (55)  [21/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 117>: 3.65ns
+ST_117: gmem_addr_1_wr_resp (55)  [20/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 118>: 3.65ns
+ST_118: gmem_addr_1_wr_resp (55)  [19/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 119>: 3.65ns
+ST_119: gmem_addr_1_wr_resp (55)  [18/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 120>: 3.65ns
+ST_120: gmem_addr_1_wr_resp (55)  [17/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 121>: 3.65ns
+ST_121: gmem_addr_1_wr_resp (55)  [16/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 122>: 3.65ns
+ST_122: gmem_addr_1_wr_resp (55)  [15/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 123>: 3.65ns
+ST_123: gmem_addr_1_wr_resp (55)  [14/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 124>: 3.65ns
+ST_124: gmem_addr_1_wr_resp (55)  [13/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 125>: 3.65ns
+ST_125: gmem_addr_1_wr_resp (55)  [12/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 126>: 3.65ns
+ST_126: gmem_addr_1_wr_resp (55)  [11/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 127>: 3.65ns
+ST_127: gmem_addr_1_wr_resp (55)  [10/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 128>: 3.65ns
+ST_128: gmem_addr_1_wr_resp (55)  [9/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 129>: 3.65ns
+ST_129: gmem_addr_1_wr_resp (55)  [8/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 130>: 3.65ns
+ST_130: gmem_addr_1_wr_resp (55)  [7/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 131>: 3.65ns
+ST_131: gmem_addr_1_wr_resp (55)  [6/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 132>: 3.65ns
+ST_132: gmem_addr_1_wr_resp (55)  [5/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 133>: 3.65ns
+ST_133: gmem_addr_1_wr_resp (55)  [4/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 134>: 3.65ns
+ST_134: gmem_addr_1_wr_resp (55)  [3/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 135>: 3.65ns
+ST_135: gmem_addr_1_wr_resp (55)  [2/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 136>: 3.65ns
+ST_136: gmem_addr_1_wr_resp (55)  [1/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+ST_136: StgValue_310 (56)  [1/1] 0.00ns  loc: krnl_write_compute_unit:63
+__AESL_call_work_item_NA4.exit:1  ret void
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5ns, clock uncertainty: 1.35ns.
+
+ <State 1>: 1ns
+The critical path consists of the following:
+	s_axi read on port 'c' (krnl_write_compute_unit:42) [19]  (1 ns)
+
+ <State 2>: 3.65ns
+The critical path consists of the following:
+	bus request on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [24]  (3.65 ns)
+
+ <State 3>: 1.5ns
+The critical path consists of the following:
+	'phi' operation ('i_0_reg2mem5_0_i_i', /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:52) with incoming values : ('p_reg2mem_0_i_i', /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:52) [27]  (0 ns)
+	'add' operation ('p_reg2mem_0_i_i', /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:52) [30]  (1.5 ns)
+
+ <State 4>: 3.65ns
+The critical path consists of the following:
+	'load' operation ('p_0_load') on local variable 'p_0' [51]  (0 ns)
+	bus write on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [52]  (3.65 ns)
+
+ <State 5>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 6>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 7>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 8>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 9>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 10>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 11>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 12>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 13>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 14>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 15>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 16>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 17>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 18>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 19>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 20>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 21>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 22>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 23>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 24>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 25>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 26>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 27>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 28>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 29>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 30>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 31>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 32>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 33>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 34>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 35>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 36>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 37>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 38>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 39>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 40>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 41>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 42>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 43>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 44>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 45>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 46>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 47>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 48>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 49>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 50>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 51>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 52>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 53>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 54>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 55>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 56>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 57>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 58>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 59>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 60>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 61>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 62>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 63>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 64>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 65>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 66>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 67>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 68>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 69>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 70>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 71>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 72>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 73>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 74>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 75>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 76>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 77>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 78>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 79>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 80>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 81>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 82>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 83>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 84>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 85>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 86>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 87>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 88>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 89>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 90>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 91>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 92>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 93>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 94>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 95>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 96>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 97>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 98>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 99>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 100>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 101>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 102>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 103>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 104>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 105>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 106>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 107>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 108>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 109>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 110>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 111>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 112>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 113>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 114>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 115>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 116>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 117>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 118>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 119>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 120>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 121>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 122>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 123>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 124>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 125>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 126>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 127>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 128>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 129>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 130>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 131>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 132>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 133>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 134>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 135>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+ <State 136>: 3.65ns
+The critical path consists of the following:
+	bus access on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55) [55]  (3.65 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+	State 65
+	State 66
+	State 67
+	State 68
+	State 69
+	State 70
+	State 71
+	State 72
+	State 73
+	State 74
+	State 75
+	State 76
+	State 77
+	State 78
+	State 79
+	State 80
+	State 81
+	State 82
+	State 83
+	State 84
+	State 85
+	State 86
+	State 87
+	State 88
+	State 89
+	State 90
+	State 91
+	State 92
+	State 93
+	State 94
+	State 95
+	State 96
+	State 97
+	State 98
+	State 99
+	State 100
+	State 101
+	State 102
+	State 103
+	State 104
+	State 105
+	State 106
+	State 107
+	State 108
+	State 109
+	State 110
+	State 111
+	State 112
+	State 113
+	State 114
+	State 115
+	State 116
+	State 117
+	State 118
+	State 119
+	State 120
+	State 121
+	State 122
+	State 123
+	State 124
+	State 125
+	State 126
+	State 127
+	State 128
+	State 129
+	State 130
+	State 131
+	State 132
+	State 133
+	State 134
+	State 135
+	State 136
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

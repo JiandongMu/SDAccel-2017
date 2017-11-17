@@ -1,0 +1,95 @@
+================================================================
+  Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC
+  Version 2017.2
+  Build 1909853 on Wed Aug 23 11:51:38 MDT 2017
+  Copyright (C) 1986-2017 Xilinx, Inc. All Rights Reserved.
+================================================================
+INFO: [HLS 200-10] Running '/home/yanghui/Xilinx/SDx/2017.2/Vivado_HLS/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'yanghui' on host 'Alienware' (Linux_x86_64 version 4.10.0-38-generic) on Thu Nov 16 23:15:38 HKT 2017
+INFO: [HLS 200-10] On os Ubuntu 16.04.3 LTS
+INFO: [HLS 200-10] In directory '/home/yanghui/Desktop/myProject/multiple_krnl/_xocc_compile_krnl_vadd_krnl_vadd.hw_emu.dir/impl/kernels/krnl_read'
+INFO: [HLS 200-10] Creating and opening project '/home/yanghui/Desktop/myProject/multiple_krnl/_xocc_compile_krnl_vadd_krnl_vadd.hw_emu.dir/impl/kernels/krnl_read/krnl_read'.
+INFO: [HLS 200-10] Adding design file '/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl' to the project
+INFO: [HLS 200-10] Creating and opening solution '/home/yanghui/Desktop/myProject/multiple_krnl/_xocc_compile_krnl_vadd_krnl_vadd.hw_emu.dir/impl/kernels/krnl_read/krnl_read/solution_OCL_REGION_0'.
+INFO: [HLS 200-10] Setting target device to 'xc7vx690tffg1157-2'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.35ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [XFORM 203-1171] Pipeline the innermost loop with trip count more than 64 or its parent loop when its trip count is less than or equal 64.
+INFO: [XFORM 203-1161] The maximum of name length is set into 256.
+INFO: [HLS 200-10] Analyzing design file '/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl' ... 
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 356.906 ; gain = 12.586 ; free physical = 12771 ; free virtual = 31060
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 356.906 ; gain = 12.586 ; free physical = 12778 ; free virtual = 31066
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 387.238 ; gain = 42.918 ; free physical = 12770 ; free virtual = 31059
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 387.238 ; gain = 42.918 ; free physical = 12769 ; free virtual = 31058
+INFO: [XFORM 203-510] Pipelining loop 'Loop-2' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:21) in function 'krnl_read' automatically.
+INFO: [XFORM 203-102] Partitioning array '.cast.i.1' automatically.
+INFO: [XFORM 203-102] Partitioning array '.cast.i.2' automatically.
+INFO: [XFORM 203-102] Partitioning array '.cast.i.3' automatically.
+INFO: [XFORM 203-102] Partitioning array '.cast.i.4' automatically.
+INFO: [XFORM 203-102] Partitioning array '.cast.i.5' automatically.
+INFO: [XFORM 203-102] Partitioning array '.cast.i.6' automatically.
+INFO: [XFORM 203-102] Partitioning array '.cast.i.7' automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 501.078 ; gain = 156.758 ; free physical = 12713 ; free virtual = 31002
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 501.078 ; gain = 156.758 ; free physical = 12729 ; free virtual = 31018
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'krnl_read' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'krnl_read' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between bus request on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:25) and bus request on port 'gmem' (/home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:24).
+INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 2, Depth: 137.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 6.22 seconds; current allocated memory: 60.071 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.22 seconds; current allocated memory: 60.957 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'krnl_read' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'krnl_read/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'krnl_read/pipe_a' to 'axis'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'krnl_read/pipe_a_count' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'krnl_read/pipe_b' to 'axis'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'krnl_read/pipe_b_count' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'krnl_read/a' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'krnl_read/b' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'krnl_read/n_elements' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'krnl_read/p_xcl_gv_pipe_a' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'krnl_read/p_xcl_gv_pipe_b' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'krnl_read' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'a', 'b', 'n_elements', 'p_xcl_gv_pipe_a' and 'p_xcl_gv_pipe_b' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'krnl_read'.
+INFO: [HLS 200-111]  Elapsed time: 0.11 seconds; current allocated memory: 62.926 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 501.078 ; gain = 156.758 ; free physical = 12701 ; free virtual = 30997
+INFO: [SYSC 207-301] Generating SystemC RTL for krnl_read.
+INFO: [VHDL 208-304] Generating VHDL RTL for krnl_read.
+INFO: [VLOG 209-307] Generating Verilog RTL for krnl_read.
+INFO: [IMPL 213-8] Exporting RTL as an IP in IP-XACT.
+
+
+****** Vivado v2017.2_sdx (64-bit)
+  **** SW Build 1972098 on Wed Aug 23 11:34:38 MDT 2017
+  **** IP Build 1971916 on Wed Aug 23 13:11:02 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common 17-1460] Use of init.tcl in /home/yanghui/Xilinx/SDx/2017.2/Vivado/scripts/init.tcl is deprecated. Please use Vivado_init.tcl 
+Sourcing tcl script '/home/yanghui/Xilinx/SDx/2017.2/Vivado/scripts/init.tcl'
+0 Beta devices matching pattern found, 0 enabled.
+Loaded SDSoC Platform Tcl Library
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/yanghui/Xilinx/SDx/2017.2/Vivado/data/ip'.
+WARNING: [Vivado 12-4404] The CPU emulation flow is not supported when using a packaged XO file with XOCC.
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 16 23:15:56 2017...
+Vivado HLS completed successfully
+INFO: [HLS 200-112] Total elapsed time: 38.74 seconds; peak allocated memory: 62.926 MB.

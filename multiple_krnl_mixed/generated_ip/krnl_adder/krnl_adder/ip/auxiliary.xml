@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="krnl_adder" xd:componentRef="krnl_adder" xd:initiationInterval="x" xd:clockPeriod="5.000000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
+  <xd:arg xd:name="*(gmem)" xd:originalName="gmem" xd:direction="inout" xd:interfaceRef="m_axi_gmem" xd:busTypeRef="aximm" xd:dataWidth="32" xd:bufferDirection="in"/>
+  <xd:arg xd:name="pipe_a" xd:originalName="pipe_a" xd:direction="in" xd:interfaceRef="pipe_a" xd:busTypeRef="axis" xd:dataWidth="32"/>
+  <xd:arg xd:name="pipe_a_count" xd:originalName="pipe_a_count" xd:direction="in" xd:interfaceRef="pipe_a_count" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="pipe_b" xd:originalName="pipe_b" xd:direction="in" xd:interfaceRef="pipe_b" xd:busTypeRef="axis" xd:dataWidth="32"/>
+  <xd:arg xd:name="pipe_b_count" xd:originalName="pipe_b_count" xd:direction="in" xd:interfaceRef="pipe_b_count" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:arg xd:name="pipe_c" xd:originalName="pipe_c" xd:direction="out" xd:interfaceRef="pipe_c" xd:busTypeRef="axis" xd:dataWidth="32"/>
+  <xd:arg xd:name="pipe_c_count" xd:originalName="pipe_c_count" xd:direction="in" xd:interfaceRef="pipe_c_count" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="32" xd:firstOut="2"/>
+  <xd:arg xd:name="n_elements" xd:originalName="n_elements" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0x10" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="__xcl_gv_pipe_a" xd:originalName="__xcl_gv_pipe_a" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:dataWidth="64" xd:offset="0x18" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="__xcl_gv_pipe_b" xd:originalName="__xcl_gv_pipe_b" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:dataWidth="64" xd:offset="0x24" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="__xcl_gv_pipe_c" xd:originalName="__xcl_gv_pipe_c" xd:direction="in" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:dataWidth="64" xd:offset="0x30" xd:handshakeRef="ap_none"/>
+  <xd:latencyEstimates xd:best-case="undef" xd:worst-case="undef" xd:average-case="undef"/>
+  <xd:resourceEstimates xd:LUT="842" xd:FF="419" xd:BRAM="0" xd:DSP="0"/>
+</xd:acceleratorMap>

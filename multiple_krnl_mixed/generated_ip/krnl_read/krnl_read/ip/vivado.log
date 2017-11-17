@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# Vivado v2017.2_sdx (64-bit)
+# SW Build 1972098 on Wed Aug 23 11:34:38 MDT 2017
+# IP Build 1971916 on Wed Aug 23 13:11:02 MDT 2017
+# Start of session at: Thu Nov 16 23:15:46 2017
+# Process ID: 17829
+# Current directory: /home/yanghui/Desktop/myProject/multiple_krnl/_xocc_compile_krnl_vadd_krnl_vadd.hw_emu.dir/impl/kernels/krnl_read/krnl_read/solution_OCL_REGION_0/impl/ip
+# Command line: vivado -notrace -mode batch -source run_ippack.tcl
+# Log file: /home/yanghui/Desktop/myProject/multiple_krnl/_xocc_compile_krnl_vadd_krnl_vadd.hw_emu.dir/impl/kernels/krnl_read/krnl_read/solution_OCL_REGION_0/impl/ip/vivado.log
+# Journal file: /home/yanghui/Desktop/myProject/multiple_krnl/_xocc_compile_krnl_vadd_krnl_vadd.hw_emu.dir/impl/kernels/krnl_read/krnl_read/solution_OCL_REGION_0/impl/ip/vivado.jou
+#-----------------------------------------------------------
+INFO: [Common 17-1460] Use of init.tcl in /home/yanghui/Xilinx/SDx/2017.2/Vivado/scripts/init.tcl is deprecated. Please use Vivado_init.tcl 
+Sourcing tcl script '/home/yanghui/Xilinx/SDx/2017.2/Vivado/scripts/init.tcl'
+0 Beta devices matching pattern found, 0 enabled.
+Loaded SDSoC Platform Tcl Library
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/yanghui/Xilinx/SDx/2017.2/Vivado/data/ip'.
+WARNING: [Vivado 12-4404] The CPU emulation flow is not supported when using a packaged XO file with XOCC.
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 16 23:15:56 2017...

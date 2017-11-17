@@ -1,0 +1,2386 @@
+
+
+================================================================
+== Vivado HLS Report for 'krnl_write'
+================================================================
+* Date:           Thu Nov 16 23:15:45 2017
+
+* Version:        2017.2 (Build 1909853 on Wed Aug 23 11:51:38 MDT 2017)
+* Project:        krnl_write
+* Solution:       solution_OCL_REGION_0
+* Product family: virtex7
+* Target device:  xc7vx690tffg1157-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   5.00|      3.65|        1.35|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    ?|    ?|         2|          1|          1|     ?|    yes   |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  |
++-----------------+---------+-------+--------+--------+
+|DSP              |        -|      -|       -|       -|
+|Expression       |        -|      -|       0|     164|
+|FIFO             |        -|      -|       -|       -|
+|Instance         |        2|      -|     726|     940|
+|Memory           |        -|      -|       -|       -|
+|Multiplexer      |        -|      -|       -|     687|
+|Register         |        -|      -|     298|       -|
++-----------------+---------+-------+--------+--------+
+|Total            |        2|      0|    1024|    1791|
++-----------------+---------+-------+--------+--------+
+|Available        |     2940|   3600|  866400|  433200|
++-----------------+---------+-------+--------+--------+
+|Utilization (%)  |    ~0   |      0|   ~0   |   ~0   |
++-----------------+---------+-------+--------+--------+
+
++ Detail: 
+    * Instance: 
+    +----------------------------+--------------------------+---------+-------+-----+-----+
+    |          Instance          |          Module          | BRAM_18K| DSP48E|  FF | LUT |
+    +----------------------------+--------------------------+---------+-------+-----+-----+
+    |krnl_write_control_s_axi_U  |krnl_write_control_s_axi  |        0|      0|  214|  360|
+    |krnl_write_gmem_m_axi_U     |krnl_write_gmem_m_axi     |        2|      0|  512|  580|
+    +----------------------------+--------------------------+---------+-------+-----+-----+
+    |Total                       |                          |        2|      0|  726|  940|
+    +----------------------------+--------------------------+---------+-------+-----+-----+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |p_reg2mem_0_i_i_fu_162_p2         |     +    |      0|  0|  38|          31|           1|
+    |ap_block_pp0_stage0_01001         |    and   |      0|  0|   8|           1|           1|
+    |ap_block_state4_io                |    and   |      0|  0|   8|           1|           1|
+    |ap_condition_1309                 |    and   |      0|  0|   8|           1|           1|
+    |ap_predicate_op165_read_state3    |    and   |      0|  0|   8|           1|           1|
+    |ap_predicate_op170_read_state3    |    and   |      0|  0|   8|           1|           1|
+    |icmp_fu_178_p2                    |   icmp   |      0|  0|  18|          31|           1|
+    |tmp_2_fu_157_p2                   |   icmp   |      0|  0|  18|          32|          32|
+    |tmp_4_fu_184_p2                   |   icmp   |      0|  0|  18|          32|           1|
+    |ap_block_pp0_stage0_11001         |    or    |      0|  0|   8|           1|           1|
+    |ap_block_state3_pp0_stage0_iter0  |    or    |      0|  0|   8|           1|           1|
+    |ap_enable_pp0                     |    xor   |      0|  0|   8|           1|           2|
+    |ap_enable_reg_pp0_iter1           |    xor   |      0|  0|   8|           1|           2|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                             |          |      0|  0| 164|         135|          46|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------------+-----+-----------+-----+-----------+
+    |             Name            | LUT | Input Size| Bits| Total Bits|
+    +-----------------------------+-----+-----------+-----+-----------+
+    |ap_NS_fsm                    |  609|        136|    1|        136|
+    |ap_enable_reg_pp0_iter1      |   15|          3|    1|          3|
+    |ap_sig_ioackin_gmem_AWREADY  |    9|          2|    1|          2|
+    |ap_sig_ioackin_gmem_WREADY   |    9|          2|    1|          2|
+    |gmem_blk_n_AW                |    9|          2|    1|          2|
+    |gmem_blk_n_B                 |    9|          2|    1|          2|
+    |gmem_blk_n_W                 |    9|          2|    1|          2|
+    |i_0_reg2mem5_0_i_i_reg_117   |    9|          2|   31|         62|
+    |pipe_c_TDATA_blk_n           |    9|          2|    1|          2|
+    +-----------------------------+-----+-----------+-----+-----------+
+    |Total                        |  687|        153|   39|        213|
+    +-----------------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------------+-----+----+-----+-----------+
+    |             Name            |  FF | LUT| Bits| Const Bits|
+    +-----------------------------+-----+----+-----+-----------+
+    |ap_CS_fsm                    |  135|   0|  135|          0|
+    |ap_enable_reg_pp0_iter0      |    1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1      |    1|   0|    1|          0|
+    |ap_reg_ioackin_gmem_AWREADY  |    1|   0|    1|          0|
+    |ap_reg_ioackin_gmem_WREADY   |    1|   0|    1|          0|
+    |ap_rst_n_inv                 |    1|   0|    1|          0|
+    |arg_n_elements_reg_200       |   32|   0|   32|          0|
+    |gmem_addr_reg_206            |   62|   0|   64|          2|
+    |i_0_reg2mem5_0_i_i_reg_117   |   31|   0|   31|          0|
+    |p_0_fu_74                    |   32|   0|   32|          0|
+    |tmp_2_reg_212                |    1|   0|    1|          0|
+    +-----------------------------+-----+----+-----+-----------+
+    |Total                        |  298|   0|  300|          2|
+    +-----------------------------+-----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+--------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  | Source Object|    C Type    |
++-----------------------+-----+-----+------------+--------------+--------------+
+|s_axi_control_AWVALID  |  in |    1|    s_axi   |    control   |    pointer   |
+|s_axi_control_AWREADY  | out |    1|    s_axi   |    control   |    pointer   |
+|s_axi_control_AWADDR   |  in |    6|    s_axi   |    control   |    pointer   |
+|s_axi_control_WVALID   |  in |    1|    s_axi   |    control   |    pointer   |
+|s_axi_control_WREADY   | out |    1|    s_axi   |    control   |    pointer   |
+|s_axi_control_WDATA    |  in |   32|    s_axi   |    control   |    pointer   |
+|s_axi_control_WSTRB    |  in |    4|    s_axi   |    control   |    pointer   |
+|s_axi_control_ARVALID  |  in |    1|    s_axi   |    control   |    pointer   |
+|s_axi_control_ARREADY  | out |    1|    s_axi   |    control   |    pointer   |
+|s_axi_control_ARADDR   |  in |    6|    s_axi   |    control   |    pointer   |
+|s_axi_control_RVALID   | out |    1|    s_axi   |    control   |    pointer   |
+|s_axi_control_RREADY   |  in |    1|    s_axi   |    control   |    pointer   |
+|s_axi_control_RDATA    | out |   32|    s_axi   |    control   |    pointer   |
+|s_axi_control_RRESP    | out |    2|    s_axi   |    control   |    pointer   |
+|s_axi_control_BVALID   | out |    1|    s_axi   |    control   |    pointer   |
+|s_axi_control_BREADY   |  in |    1|    s_axi   |    control   |    pointer   |
+|s_axi_control_BRESP    | out |    2|    s_axi   |    control   |    pointer   |
+|ap_clk                 |  in |    1| ap_ctrl_hs |  krnl_write  | return value |
+|ap_rst_n               |  in |    1| ap_ctrl_hs |  krnl_write  | return value |
+|interrupt              | out |    1| ap_ctrl_hs |  krnl_write  | return value |
+|m_axi_gmem_AWVALID     | out |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_AWREADY     |  in |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_AWADDR      | out |   64|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_AWID        | out |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_AWLEN       | out |    8|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_AWSIZE      | out |    3|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_AWBURST     | out |    2|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_AWLOCK      | out |    2|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_AWCACHE     | out |    4|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_AWPROT      | out |    3|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_AWQOS       | out |    4|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_AWREGION    | out |    4|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_AWUSER      | out |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_WVALID      | out |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_WREADY      |  in |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_WDATA       | out |   32|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_WSTRB       | out |    4|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_WLAST       | out |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_WID         | out |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_WUSER       | out |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_ARVALID     | out |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_ARREADY     |  in |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_ARADDR      | out |   64|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_ARID        | out |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_ARLEN       | out |    8|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_ARSIZE      | out |    3|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_ARBURST     | out |    2|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_ARLOCK      | out |    2|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_ARCACHE     | out |    4|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_ARPROT      | out |    3|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_ARQOS       | out |    4|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_ARREGION    | out |    4|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_ARUSER      | out |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_RVALID      |  in |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_RREADY      | out |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_RDATA       |  in |   32|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_RLAST       |  in |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_RID         |  in |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_RUSER       |  in |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_RRESP       |  in |    2|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_BVALID      |  in |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_BREADY      | out |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_BRESP       |  in |    2|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_BID         |  in |    1|    m_axi   |     gmem     |    pointer   |
+|m_axi_gmem_BUSER       |  in |    1|    m_axi   |     gmem     |    pointer   |
+|pipe_c_TDATA           |  in |   32|    axis    |    pipe_c    |    pointer   |
+|pipe_c_TVALID          |  in |    1|    axis    |    pipe_c    |    pointer   |
+|pipe_c_TREADY          | out |    1|    axis    |    pipe_c    |    pointer   |
+|pipe_c_count           |  in |   32|   ap_none  | pipe_c_count |    scalar    |
++-----------------------+-----+-----+------------+--------------+--------------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 2
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 136
+* Pipeline: 1
+  Pipeline-0: II = 1, D = 2, States = { 3 4 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	5  / (!tmp_2)
+	4  / (tmp_2)
+4 --> 
+	3  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / true
+34 --> 
+	35  / true
+35 --> 
+	36  / true
+36 --> 
+	37  / true
+37 --> 
+	38  / true
+38 --> 
+	39  / true
+39 --> 
+	40  / true
+40 --> 
+	41  / true
+41 --> 
+	42  / true
+42 --> 
+	43  / true
+43 --> 
+	44  / true
+44 --> 
+	45  / true
+45 --> 
+	46  / true
+46 --> 
+	47  / true
+47 --> 
+	48  / true
+48 --> 
+	49  / true
+49 --> 
+	50  / true
+50 --> 
+	51  / true
+51 --> 
+	52  / true
+52 --> 
+	53  / true
+53 --> 
+	54  / true
+54 --> 
+	55  / true
+55 --> 
+	56  / true
+56 --> 
+	57  / true
+57 --> 
+	58  / true
+58 --> 
+	59  / true
+59 --> 
+	60  / true
+60 --> 
+	61  / true
+61 --> 
+	62  / true
+62 --> 
+	63  / true
+63 --> 
+	64  / true
+64 --> 
+	65  / true
+65 --> 
+	66  / true
+66 --> 
+	67  / true
+67 --> 
+	68  / true
+68 --> 
+	69  / true
+69 --> 
+	70  / true
+70 --> 
+	71  / true
+71 --> 
+	72  / true
+72 --> 
+	73  / true
+73 --> 
+	74  / true
+74 --> 
+	75  / true
+75 --> 
+	76  / true
+76 --> 
+	77  / true
+77 --> 
+	78  / true
+78 --> 
+	79  / true
+79 --> 
+	80  / true
+80 --> 
+	81  / true
+81 --> 
+	82  / true
+82 --> 
+	83  / true
+83 --> 
+	84  / true
+84 --> 
+	85  / true
+85 --> 
+	86  / true
+86 --> 
+	87  / true
+87 --> 
+	88  / true
+88 --> 
+	89  / true
+89 --> 
+	90  / true
+90 --> 
+	91  / true
+91 --> 
+	92  / true
+92 --> 
+	93  / true
+93 --> 
+	94  / true
+94 --> 
+	95  / true
+95 --> 
+	96  / true
+96 --> 
+	97  / true
+97 --> 
+	98  / true
+98 --> 
+	99  / true
+99 --> 
+	100  / true
+100 --> 
+	101  / true
+101 --> 
+	102  / true
+102 --> 
+	103  / true
+103 --> 
+	104  / true
+104 --> 
+	105  / true
+105 --> 
+	106  / true
+106 --> 
+	107  / true
+107 --> 
+	108  / true
+108 --> 
+	109  / true
+109 --> 
+	110  / true
+110 --> 
+	111  / true
+111 --> 
+	112  / true
+112 --> 
+	113  / true
+113 --> 
+	114  / true
+114 --> 
+	115  / true
+115 --> 
+	116  / true
+116 --> 
+	117  / true
+117 --> 
+	118  / true
+118 --> 
+	119  / true
+119 --> 
+	120  / true
+120 --> 
+	121  / true
+121 --> 
+	122  / true
+122 --> 
+	123  / true
+123 --> 
+	124  / true
+124 --> 
+	125  / true
+125 --> 
+	126  / true
+126 --> 
+	127  / true
+127 --> 
+	128  / true
+128 --> 
+	129  / true
+129 --> 
+	130  / true
+130 --> 
+	131  / true
+131 --> 
+	132  / true
+132 --> 
+	133  / true
+133 --> 
+	134  / true
+134 --> 
+	135  / true
+135 --> 
+	136  / true
+136 --> 
+* FSM state operations: 
+
+ <State 1>: 1.00ns
+ST_1: p_0 (7)  [1/1] 0.00ns
+:0  %p_0 = alloca i32
+
+ST_1: c_read (19)  [1/1] 1.00ns  loc: krnl_write_compute_unit:42
+:12  %c_read = call i64 @_ssdm_op_Read.s_axilite.i64P(i64* %c)
+
+ST_1: tmp (20)  [1/1] 0.00ns  loc: krnl_write_compute_unit:43
+:13  %tmp = call i62 @_ssdm_op_PartSelect.i62.i64.i32.i32(i64 %c_read, i32 2, i32 63)
+
+ST_1: arg_n_elements (21)  [1/1] 1.00ns  loc: krnl_write_compute_unit:43
+:14  %arg_n_elements = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %n_elements)
+
+ST_1: tmp_6 (22)  [1/1] 0.00ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+:15  %tmp_6 = zext i62 %tmp to i64
+
+ST_1: gmem_addr (23)  [1/1] 0.00ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+:16  %gmem_addr = getelementptr inbounds i32 addrspace(1)* %gmem, i64 %tmp_6, !xcl.port !3
+
+
+ <State 2>: 3.65ns
+ST_2: StgValue_143 (8)  [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecBitsMap(i32 addrspace(1)* %gmem), !map !11
+
+ST_2: StgValue_144 (9)  [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecBitsMap(i32 addrspace(4)* %pipe_c), !map !17
+
+ST_2: StgValue_145 (10)  [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecBitsMap(i32 %pipe_c_count), !map !21
+
+ST_2: StgValue_146 (11)  [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_SpecBitsMap(i64* %c), !map !27
+
+ST_2: StgValue_147 (12)  [1/1] 0.00ns
+:5  call void (...)* @_ssdm_op_SpecBitsMap(i32* %n_elements), !map !31
+
+ST_2: StgValue_148 (13)  [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_SpecBitsMap(i64* %p_xcl_gv_pipe_c), !map !35
+
+ST_2: StgValue_149 (14)  [1/1] 0.00ns
+:7  call void (...)* @_ssdm_op_SpecTopModule([11 x i8]* @krnl_write_str)
+
+ST_2: StgValue_150 (15)  [1/1] 0.00ns  loc: krnl_write_compute_unit:55
+:8  call void (...)* @_ssdm_op_SpecInterface(i32 addrspace(4)* %pipe_c, [5 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+ST_2: StgValue_151 (16)  [1/1] 0.00ns  loc: krnl_write_compute_unit:56
+:9  call void (...)* @_ssdm_op_SpecInterface(i32 addrspace(1)* %gmem, [6 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 128, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+ST_2: StgValue_152 (17)  [1/1] 0.00ns  loc: krnl_write_compute_unit:57
+:10  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+ST_2: StgValue_153 (18)  [1/1] 0.00ns  loc: krnl_write_compute_unit:58
+:11  call void (...)* @_ssdm_op_SpecInterface(i64* %c, i32* %n_elements, i64* %p_xcl_gv_pipe_c, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+ST_2: gmem_addr_1_wr_req (24)  [1/1] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+:17  %gmem_addr_1_wr_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32 addrspace(1)* %gmem_addr, i32 %arg_n_elements)
+
+ST_2: StgValue_155 (25)  [1/1] 0.85ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:52
+:18  br label %1
+
+
+ <State 3>: 1.50ns
+ST_3: i_0_reg2mem5_0_i_i (27)  [1/1] 0.00ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:52
+:0  %i_0_reg2mem5_0_i_i = phi i31 [ 0, %0 ], [ %p_reg2mem_0_i_i, %__xcl_read_pipe.exit.i.i ]
+
+ST_3: i_0_reg2mem5_0_i_i_cast (28)  [1/1] 0.00ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:52
+:1  %i_0_reg2mem5_0_i_i_cast = zext i31 %i_0_reg2mem5_0_i_i to i32
+
+ST_3: tmp_2 (29)  [1/1] 1.26ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:52
+:2  %tmp_2 = icmp slt i32 %i_0_reg2mem5_0_i_i_cast, %arg_n_elements
+
+ST_3: p_reg2mem_0_i_i (30)  [1/1] 1.50ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:52
+:3  %p_reg2mem_0_i_i = add i31 %i_0_reg2mem5_0_i_i, 1
+
+ST_3: StgValue_160 (31)  [1/1] 0.00ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:52
+:4  br i1 %tmp_2, label %2, label %__AESL_call_work_item_NA4.exit
+
+ST_3: pipe_c_count_read (34)  [1/1] 0.00ns
+:1  %pipe_c_count_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %pipe_c_count) nounwind
+
+ST_3: tmp_1 (35)  [1/1] 0.00ns
+:2  %tmp_1 = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %pipe_c_count_read, i32 1, i32 31)
+
+ST_3: icmp (36)  [1/1] 1.26ns
+:3  %icmp = icmp eq i31 %tmp_1, 0
+
+ST_3: StgValue_164 (37)  [1/1] 0.00ns
+:4  br i1 %icmp, label %4, label %3
+
+ST_3: pipe_c_read (39)  [1/1] 0.00ns
+:0  %pipe_c_read = call i32 @_ssdm_op_Read.axis.volatile.i32P(i32 addrspace(4)* %pipe_c)
+
+ST_3: StgValue_166 (40)  [1/1] 0.85ns
+:1  store i32 %pipe_c_read, i32* %p_0
+
+ST_3: pipe_c_count_read_1 (43)  [1/1] 0.00ns
+:0  %pipe_c_count_read_1 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %pipe_c_count) nounwind
+
+ST_3: tmp_4 (44)  [1/1] 1.26ns
+:1  %tmp_4 = icmp eq i32 %pipe_c_count_read_1, 0
+
+ST_3: StgValue_169 (45)  [1/1] 0.00ns
+:2  br i1 %tmp_4, label %__xcl_read_pipe.exit.i.i, label %5
+
+ST_3: pipe_c_read_1 (47)  [1/1] 0.00ns
+:0  %pipe_c_read_1 = call i32 @_ssdm_op_Read.axis.volatile.i32P(i32 addrspace(4)* %pipe_c)
+
+ST_3: StgValue_171 (48)  [1/1] 0.85ns
+:1  store i32 %pipe_c_read_1, i32* %p_0
+
+
+ <State 4>: 3.65ns
+ST_4: StgValue_172 (33)  [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str5)
+
+ST_4: StgValue_173 (41)  [1/1] 0.00ns
+:2  br label %__xcl_read_pipe.exit.i.i
+
+ST_4: StgValue_174 (49)  [1/1] 0.00ns
+:2  br label %__xcl_read_pipe.exit.i.i
+
+ST_4: p_0_load (51)  [1/1] 0.00ns
+__xcl_read_pipe.exit.i.i:0  %p_0_load = load i32* %p_0
+
+ST_4: StgValue_176 (52)  [1/1] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__xcl_read_pipe.exit.i.i:1  call void @_ssdm_op_Write.m_axi.i32P(i32 addrspace(1)* %gmem_addr, i32 %p_0_load, i4 -1)
+
+ST_4: StgValue_177 (53)  [1/1] 0.00ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:52
+__xcl_read_pipe.exit.i.i:2  br label %1
+
+
+ <State 5>: 3.65ns
+ST_5: gmem_addr_1_wr_resp (55)  [132/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 6>: 3.65ns
+ST_6: gmem_addr_1_wr_resp (55)  [131/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 7>: 3.65ns
+ST_7: gmem_addr_1_wr_resp (55)  [130/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 8>: 3.65ns
+ST_8: gmem_addr_1_wr_resp (55)  [129/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 9>: 3.65ns
+ST_9: gmem_addr_1_wr_resp (55)  [128/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 10>: 3.65ns
+ST_10: gmem_addr_1_wr_resp (55)  [127/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 11>: 3.65ns
+ST_11: gmem_addr_1_wr_resp (55)  [126/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 12>: 3.65ns
+ST_12: gmem_addr_1_wr_resp (55)  [125/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 13>: 3.65ns
+ST_13: gmem_addr_1_wr_resp (55)  [124/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 14>: 3.65ns
+ST_14: gmem_addr_1_wr_resp (55)  [123/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 15>: 3.65ns
+ST_15: gmem_addr_1_wr_resp (55)  [122/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 16>: 3.65ns
+ST_16: gmem_addr_1_wr_resp (55)  [121/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 17>: 3.65ns
+ST_17: gmem_addr_1_wr_resp (55)  [120/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 18>: 3.65ns
+ST_18: gmem_addr_1_wr_resp (55)  [119/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 19>: 3.65ns
+ST_19: gmem_addr_1_wr_resp (55)  [118/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 20>: 3.65ns
+ST_20: gmem_addr_1_wr_resp (55)  [117/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 21>: 3.65ns
+ST_21: gmem_addr_1_wr_resp (55)  [116/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 22>: 3.65ns
+ST_22: gmem_addr_1_wr_resp (55)  [115/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 23>: 3.65ns
+ST_23: gmem_addr_1_wr_resp (55)  [114/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 24>: 3.65ns
+ST_24: gmem_addr_1_wr_resp (55)  [113/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 25>: 3.65ns
+ST_25: gmem_addr_1_wr_resp (55)  [112/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 26>: 3.65ns
+ST_26: gmem_addr_1_wr_resp (55)  [111/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 27>: 3.65ns
+ST_27: gmem_addr_1_wr_resp (55)  [110/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 28>: 3.65ns
+ST_28: gmem_addr_1_wr_resp (55)  [109/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 29>: 3.65ns
+ST_29: gmem_addr_1_wr_resp (55)  [108/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 30>: 3.65ns
+ST_30: gmem_addr_1_wr_resp (55)  [107/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 31>: 3.65ns
+ST_31: gmem_addr_1_wr_resp (55)  [106/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 32>: 3.65ns
+ST_32: gmem_addr_1_wr_resp (55)  [105/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 33>: 3.65ns
+ST_33: gmem_addr_1_wr_resp (55)  [104/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 34>: 3.65ns
+ST_34: gmem_addr_1_wr_resp (55)  [103/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 35>: 3.65ns
+ST_35: gmem_addr_1_wr_resp (55)  [102/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 36>: 3.65ns
+ST_36: gmem_addr_1_wr_resp (55)  [101/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 37>: 3.65ns
+ST_37: gmem_addr_1_wr_resp (55)  [100/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 38>: 3.65ns
+ST_38: gmem_addr_1_wr_resp (55)  [99/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 39>: 3.65ns
+ST_39: gmem_addr_1_wr_resp (55)  [98/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 40>: 3.65ns
+ST_40: gmem_addr_1_wr_resp (55)  [97/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 41>: 3.65ns
+ST_41: gmem_addr_1_wr_resp (55)  [96/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 42>: 3.65ns
+ST_42: gmem_addr_1_wr_resp (55)  [95/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 43>: 3.65ns
+ST_43: gmem_addr_1_wr_resp (55)  [94/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 44>: 3.65ns
+ST_44: gmem_addr_1_wr_resp (55)  [93/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 45>: 3.65ns
+ST_45: gmem_addr_1_wr_resp (55)  [92/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 46>: 3.65ns
+ST_46: gmem_addr_1_wr_resp (55)  [91/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 47>: 3.65ns
+ST_47: gmem_addr_1_wr_resp (55)  [90/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 48>: 3.65ns
+ST_48: gmem_addr_1_wr_resp (55)  [89/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 49>: 3.65ns
+ST_49: gmem_addr_1_wr_resp (55)  [88/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 50>: 3.65ns
+ST_50: gmem_addr_1_wr_resp (55)  [87/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 51>: 3.65ns
+ST_51: gmem_addr_1_wr_resp (55)  [86/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 52>: 3.65ns
+ST_52: gmem_addr_1_wr_resp (55)  [85/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 53>: 3.65ns
+ST_53: gmem_addr_1_wr_resp (55)  [84/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 54>: 3.65ns
+ST_54: gmem_addr_1_wr_resp (55)  [83/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 55>: 3.65ns
+ST_55: gmem_addr_1_wr_resp (55)  [82/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 56>: 3.65ns
+ST_56: gmem_addr_1_wr_resp (55)  [81/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 57>: 3.65ns
+ST_57: gmem_addr_1_wr_resp (55)  [80/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 58>: 3.65ns
+ST_58: gmem_addr_1_wr_resp (55)  [79/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 59>: 3.65ns
+ST_59: gmem_addr_1_wr_resp (55)  [78/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 60>: 3.65ns
+ST_60: gmem_addr_1_wr_resp (55)  [77/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 61>: 3.65ns
+ST_61: gmem_addr_1_wr_resp (55)  [76/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 62>: 3.65ns
+ST_62: gmem_addr_1_wr_resp (55)  [75/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 63>: 3.65ns
+ST_63: gmem_addr_1_wr_resp (55)  [74/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 64>: 3.65ns
+ST_64: gmem_addr_1_wr_resp (55)  [73/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 65>: 3.65ns
+ST_65: gmem_addr_1_wr_resp (55)  [72/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 66>: 3.65ns
+ST_66: gmem_addr_1_wr_resp (55)  [71/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 67>: 3.65ns
+ST_67: gmem_addr_1_wr_resp (55)  [70/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 68>: 3.65ns
+ST_68: gmem_addr_1_wr_resp (55)  [69/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 69>: 3.65ns
+ST_69: gmem_addr_1_wr_resp (55)  [68/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 70>: 3.65ns
+ST_70: gmem_addr_1_wr_resp (55)  [67/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 71>: 3.65ns
+ST_71: gmem_addr_1_wr_resp (55)  [66/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 72>: 3.65ns
+ST_72: gmem_addr_1_wr_resp (55)  [65/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 73>: 3.65ns
+ST_73: gmem_addr_1_wr_resp (55)  [64/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 74>: 3.65ns
+ST_74: gmem_addr_1_wr_resp (55)  [63/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 75>: 3.65ns
+ST_75: gmem_addr_1_wr_resp (55)  [62/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 76>: 3.65ns
+ST_76: gmem_addr_1_wr_resp (55)  [61/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 77>: 3.65ns
+ST_77: gmem_addr_1_wr_resp (55)  [60/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 78>: 3.65ns
+ST_78: gmem_addr_1_wr_resp (55)  [59/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 79>: 3.65ns
+ST_79: gmem_addr_1_wr_resp (55)  [58/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 80>: 3.65ns
+ST_80: gmem_addr_1_wr_resp (55)  [57/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 81>: 3.65ns
+ST_81: gmem_addr_1_wr_resp (55)  [56/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 82>: 3.65ns
+ST_82: gmem_addr_1_wr_resp (55)  [55/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 83>: 3.65ns
+ST_83: gmem_addr_1_wr_resp (55)  [54/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 84>: 3.65ns
+ST_84: gmem_addr_1_wr_resp (55)  [53/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 85>: 3.65ns
+ST_85: gmem_addr_1_wr_resp (55)  [52/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 86>: 3.65ns
+ST_86: gmem_addr_1_wr_resp (55)  [51/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 87>: 3.65ns
+ST_87: gmem_addr_1_wr_resp (55)  [50/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 88>: 3.65ns
+ST_88: gmem_addr_1_wr_resp (55)  [49/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 89>: 3.65ns
+ST_89: gmem_addr_1_wr_resp (55)  [48/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 90>: 3.65ns
+ST_90: gmem_addr_1_wr_resp (55)  [47/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 91>: 3.65ns
+ST_91: gmem_addr_1_wr_resp (55)  [46/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 92>: 3.65ns
+ST_92: gmem_addr_1_wr_resp (55)  [45/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 93>: 3.65ns
+ST_93: gmem_addr_1_wr_resp (55)  [44/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 94>: 3.65ns
+ST_94: gmem_addr_1_wr_resp (55)  [43/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 95>: 3.65ns
+ST_95: gmem_addr_1_wr_resp (55)  [42/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 96>: 3.65ns
+ST_96: gmem_addr_1_wr_resp (55)  [41/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 97>: 3.65ns
+ST_97: gmem_addr_1_wr_resp (55)  [40/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 98>: 3.65ns
+ST_98: gmem_addr_1_wr_resp (55)  [39/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 99>: 3.65ns
+ST_99: gmem_addr_1_wr_resp (55)  [38/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 100>: 3.65ns
+ST_100: gmem_addr_1_wr_resp (55)  [37/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 101>: 3.65ns
+ST_101: gmem_addr_1_wr_resp (55)  [36/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 102>: 3.65ns
+ST_102: gmem_addr_1_wr_resp (55)  [35/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 103>: 3.65ns
+ST_103: gmem_addr_1_wr_resp (55)  [34/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 104>: 3.65ns
+ST_104: gmem_addr_1_wr_resp (55)  [33/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 105>: 3.65ns
+ST_105: gmem_addr_1_wr_resp (55)  [32/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 106>: 3.65ns
+ST_106: gmem_addr_1_wr_resp (55)  [31/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 107>: 3.65ns
+ST_107: gmem_addr_1_wr_resp (55)  [30/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 108>: 3.65ns
+ST_108: gmem_addr_1_wr_resp (55)  [29/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 109>: 3.65ns
+ST_109: gmem_addr_1_wr_resp (55)  [28/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 110>: 3.65ns
+ST_110: gmem_addr_1_wr_resp (55)  [27/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 111>: 3.65ns
+ST_111: gmem_addr_1_wr_resp (55)  [26/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 112>: 3.65ns
+ST_112: gmem_addr_1_wr_resp (55)  [25/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 113>: 3.65ns
+ST_113: gmem_addr_1_wr_resp (55)  [24/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 114>: 3.65ns
+ST_114: gmem_addr_1_wr_resp (55)  [23/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 115>: 3.65ns
+ST_115: gmem_addr_1_wr_resp (55)  [22/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 116>: 3.65ns
+ST_116: gmem_addr_1_wr_resp (55)  [21/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 117>: 3.65ns
+ST_117: gmem_addr_1_wr_resp (55)  [20/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 118>: 3.65ns
+ST_118: gmem_addr_1_wr_resp (55)  [19/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 119>: 3.65ns
+ST_119: gmem_addr_1_wr_resp (55)  [18/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 120>: 3.65ns
+ST_120: gmem_addr_1_wr_resp (55)  [17/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 121>: 3.65ns
+ST_121: gmem_addr_1_wr_resp (55)  [16/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 122>: 3.65ns
+ST_122: gmem_addr_1_wr_resp (55)  [15/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 123>: 3.65ns
+ST_123: gmem_addr_1_wr_resp (55)  [14/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 124>: 3.65ns
+ST_124: gmem_addr_1_wr_resp (55)  [13/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 125>: 3.65ns
+ST_125: gmem_addr_1_wr_resp (55)  [12/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 126>: 3.65ns
+ST_126: gmem_addr_1_wr_resp (55)  [11/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 127>: 3.65ns
+ST_127: gmem_addr_1_wr_resp (55)  [10/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 128>: 3.65ns
+ST_128: gmem_addr_1_wr_resp (55)  [9/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 129>: 3.65ns
+ST_129: gmem_addr_1_wr_resp (55)  [8/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 130>: 3.65ns
+ST_130: gmem_addr_1_wr_resp (55)  [7/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 131>: 3.65ns
+ST_131: gmem_addr_1_wr_resp (55)  [6/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 132>: 3.65ns
+ST_132: gmem_addr_1_wr_resp (55)  [5/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 133>: 3.65ns
+ST_133: gmem_addr_1_wr_resp (55)  [4/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 134>: 3.65ns
+ST_134: gmem_addr_1_wr_resp (55)  [3/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 135>: 3.65ns
+ST_135: gmem_addr_1_wr_resp (55)  [2/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+
+ <State 136>: 3.65ns
+ST_136: gmem_addr_1_wr_resp (55)  [1/132] 3.65ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:55
+__AESL_call_work_item_NA4.exit:0  %gmem_addr_1_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32 addrspace(1)* %gmem_addr)
+
+ST_136: StgValue_310 (56)  [1/1] 0.00ns  loc: krnl_write_compute_unit:63
+__AESL_call_work_item_NA4.exit:1  ret void
+
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 1
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ gmem]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=4; pingpong=0; private_global=0; IO mode=m_axi:ce=0
+Port [ pipe_c]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=axis:ce=0
+Port [ pipe_c_count]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ c]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ n_elements]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ p_xcl_gv_pipe_c]:  wired=1; compound=0; hidden=0; nouse=1; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+p_0                     (alloca       ) [ 00111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+c_read                  (read         ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+tmp                     (partselect   ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+arg_n_elements          (read         ) [ 00111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+tmp_6                   (zext         ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+gmem_addr               (getelementptr) [ 00111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111]
+StgValue_143            (specbitsmap  ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+StgValue_144            (specbitsmap  ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+StgValue_145            (specbitsmap  ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+StgValue_146            (specbitsmap  ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+StgValue_147            (specbitsmap  ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+StgValue_148            (specbitsmap  ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+StgValue_149            (spectopmodule) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+StgValue_150            (specinterface) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+StgValue_151            (specinterface) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+StgValue_152            (specinterface) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+StgValue_153            (specinterface) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+gmem_addr_1_wr_req      (writereq     ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+StgValue_155            (br           ) [ 00111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+i_0_reg2mem5_0_i_i      (phi          ) [ 00010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+i_0_reg2mem5_0_i_i_cast (zext         ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+tmp_2                   (icmp         ) [ 00011000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+p_reg2mem_0_i_i         (add          ) [ 00111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+StgValue_160            (br           ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+pipe_c_count_read       (read         ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+tmp_1                   (partselect   ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+icmp                    (icmp         ) [ 00011000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+StgValue_164            (br           ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+pipe_c_read             (read         ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+StgValue_166            (store        ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+pipe_c_count_read_1     (read         ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+tmp_4                   (icmp         ) [ 00011000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+StgValue_169            (br           ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+pipe_c_read_1           (read         ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+StgValue_171            (store        ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+StgValue_172            (specpipeline ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+StgValue_173            (br           ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+StgValue_174            (br           ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+p_0_load                (load         ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+StgValue_176            (write        ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+StgValue_177            (br           ) [ 00111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+gmem_addr_1_wr_resp     (writeresp    ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+StgValue_310            (ret          ) [ 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="gmem">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="gmem"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="pipe_c">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="pipe_c"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="pipe_c_count">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="pipe_c_count"/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="c">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="c"/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="n_elements">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="n_elements"/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1000" name="p_xcl_gv_pipe_c">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_xcl_gv_pipe_c"/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1001" name="const_12">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1001" name="const_14">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.s_axilite.i64P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1001" name="const_16">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_PartSelect.i62.i64.i32.i32"/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1001" name="const_18">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1001" name="const_20">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1001" name="const_22">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.s_axilite.i32P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1001" name="const_24">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecBitsMap"/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1001" name="const_26">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecTopModule"/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1001" name="const_28">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="krnl_write_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1001" name="const_30">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1001" name="const_32">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1001" name="const_34">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1001" name="const_36">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1001" name="const_38">
+<pin_list>
+<pin id="39" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="40" class="1001" name="const_40">
+<pin_list>
+<pin id="41" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="42" class="1001" name="const_42">
+<pin_list>
+<pin id="43" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="44" class="1001" name="const_44">
+<pin_list>
+<pin id="45" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str3"/></StgValue>
+</bind>
+</comp>
+
+<comp id="46" class="1001" name="const_46">
+<pin_list>
+<pin id="47" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str4"/></StgValue>
+</bind>
+</comp>
+
+<comp id="48" class="1001" name="const_48">
+<pin_list>
+<pin id="49" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_WriteReq.m_axi.i32P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="50" class="1001" name="const_50">
+<pin_list>
+<pin id="51" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="52" class="1001" name="const_52">
+<pin_list>
+<pin id="53" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="54" class="1001" name="const_54">
+<pin_list>
+<pin id="55" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i32"/></StgValue>
+</bind>
+</comp>
+
+<comp id="56" class="1001" name="const_56">
+<pin_list>
+<pin id="57" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_PartSelect.i31.i32.i32.i32"/></StgValue>
+</bind>
+</comp>
+
+<comp id="58" class="1001" name="const_58">
+<pin_list>
+<pin id="59" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="60" class="1001" name="const_60">
+<pin_list>
+<pin id="61" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.axis.volatile.i32P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="62" class="1001" name="const_62">
+<pin_list>
+<pin id="63" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecPipeline"/></StgValue>
+</bind>
+</comp>
+
+<comp id="64" class="1001" name="const_64">
+<pin_list>
+<pin id="65" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="66" class="1001" name="const_66">
+<pin_list>
+<pin id="67" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str5"/></StgValue>
+</bind>
+</comp>
+
+<comp id="68" class="1001" name="const_68">
+<pin_list>
+<pin id="69" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Write.m_axi.i32P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="70" class="1001" name="const_70">
+<pin_list>
+<pin id="71" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="72" class="1001" name="const_72">
+<pin_list>
+<pin id="73" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_WriteResp.m_axi.i32P"/></StgValue>
+</bind>
+</comp>
+
+<comp id="74" class="1004" name="p_0_fu_74">
+<pin_list>
+<pin id="75" dir="0" index="0" bw="1" slack="0"/>
+<pin id="76" dir="1" index="1" bw="32" slack="2"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="p_0/1 "/>
+</bind>
+</comp>
+
+<comp id="78" class="1004" name="c_read_read_fu_78">
+<pin_list>
+<pin id="79" dir="0" index="0" bw="64" slack="0"/>
+<pin id="80" dir="0" index="1" bw="64" slack="0"/>
+<pin id="81" dir="1" index="2" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="c_read/1 "/>
+</bind>
+</comp>
+
+<comp id="84" class="1004" name="arg_n_elements_read_fu_84">
+<pin_list>
+<pin id="85" dir="0" index="0" bw="32" slack="0"/>
+<pin id="86" dir="0" index="1" bw="32" slack="0"/>
+<pin id="87" dir="1" index="2" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="arg_n_elements/1 "/>
+</bind>
+</comp>
+
+<comp id="90" class="1004" name="grp_writeresp_fu_90">
+<pin_list>
+<pin id="91" dir="0" index="0" bw="1" slack="0"/>
+<pin id="92" dir="0" index="1" bw="32" slack="1"/>
+<pin id="93" dir="0" index="2" bw="32" slack="1"/>
+<pin id="94" dir="1" index="3" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="writereq(1155) writeresp(1158) " fcode="writeresp"/>
+<opset="gmem_addr_1_wr_req/2 gmem_addr_1_wr_resp/5 "/>
+</bind>
+</comp>
+
+<comp id="96" class="1004" name="grp_read_fu_96">
+<pin_list>
+<pin id="97" dir="0" index="0" bw="32" slack="0"/>
+<pin id="98" dir="0" index="1" bw="32" slack="0"/>
+<pin id="99" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="pipe_c_count_read/3 pipe_c_count_read_1/3 "/>
+</bind>
+</comp>
+
+<comp id="102" class="1004" name="grp_read_fu_102">
+<pin_list>
+<pin id="103" dir="0" index="0" bw="32" slack="0"/>
+<pin id="104" dir="0" index="1" bw="32" slack="0"/>
+<pin id="105" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="pipe_c_read/3 pipe_c_read_1/3 "/>
+</bind>
+</comp>
+
+<comp id="108" class="1004" name="StgValue_176_write_fu_108">
+<pin_list>
+<pin id="109" dir="0" index="0" bw="0" slack="0"/>
+<pin id="110" dir="0" index="1" bw="32" slack="3"/>
+<pin id="111" dir="0" index="2" bw="32" slack="0"/>
+<pin id="112" dir="0" index="3" bw="1" slack="0"/>
+<pin id="113" dir="1" index="4" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="write(1151) " fcode="write"/>
+<opset="StgValue_176/4 "/>
+</bind>
+</comp>
+
+<comp id="117" class="1005" name="i_0_reg2mem5_0_i_i_reg_117">
+<pin_list>
+<pin id="118" dir="0" index="0" bw="31" slack="1"/>
+<pin id="119" dir="1" index="1" bw="31" slack="1"/>
+</pin_list>
+<bind>
+<opset="i_0_reg2mem5_0_i_i (phireg) "/>
+</bind>
+</comp>
+
+<comp id="121" class="1004" name="i_0_reg2mem5_0_i_i_phi_fu_121">
+<pin_list>
+<pin id="122" dir="0" index="0" bw="1" slack="1"/>
+<pin id="123" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="124" dir="0" index="2" bw="31" slack="0"/>
+<pin id="125" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="126" dir="1" index="4" bw="31" slack="0"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="i_0_reg2mem5_0_i_i/3 "/>
+</bind>
+</comp>
+
+<comp id="128" class="1004" name="grp_store_fu_128">
+<pin_list>
+<pin id="129" dir="0" index="0" bw="32" slack="0"/>
+<pin id="130" dir="0" index="1" bw="32" slack="2"/>
+<pin id="131" dir="1" index="2" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="store(28) " fcode="store"/>
+<opset="StgValue_166/3 StgValue_171/3 "/>
+</bind>
+</comp>
+
+<comp id="133" class="1004" name="tmp_fu_133">
+<pin_list>
+<pin id="134" dir="0" index="0" bw="62" slack="0"/>
+<pin id="135" dir="0" index="1" bw="64" slack="0"/>
+<pin id="136" dir="0" index="2" bw="3" slack="0"/>
+<pin id="137" dir="0" index="3" bw="7" slack="0"/>
+<pin id="138" dir="1" index="4" bw="62" slack="0"/>
+</pin_list>
+<bind>
+<opcode="partselect(1002) " fcode="partselect"/>
+<opset="tmp/1 "/>
+</bind>
+</comp>
+
+<comp id="143" class="1004" name="tmp_6_fu_143">
+<pin_list>
+<pin id="144" dir="0" index="0" bw="62" slack="0"/>
+<pin id="145" dir="1" index="1" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="tmp_6/1 "/>
+</bind>
+</comp>
+
+<comp id="147" class="1004" name="gmem_addr_fu_147">
+<pin_list>
+<pin id="148" dir="0" index="0" bw="64" slack="0"/>
+<pin id="149" dir="0" index="1" bw="64" slack="0"/>
+<pin id="150" dir="1" index="2" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="gmem_addr/1 "/>
+</bind>
+</comp>
+
+<comp id="153" class="1004" name="i_0_reg2mem5_0_i_i_cast_fu_153">
+<pin_list>
+<pin id="154" dir="0" index="0" bw="31" slack="0"/>
+<pin id="155" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="i_0_reg2mem5_0_i_i_cast/3 "/>
+</bind>
+</comp>
+
+<comp id="157" class="1004" name="tmp_2_fu_157">
+<pin_list>
+<pin id="158" dir="0" index="0" bw="32" slack="0"/>
+<pin id="159" dir="0" index="1" bw="32" slack="2"/>
+<pin id="160" dir="1" index="2" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="tmp_2/3 "/>
+</bind>
+</comp>
+
+<comp id="162" class="1004" name="p_reg2mem_0_i_i_fu_162">
+<pin_list>
+<pin id="163" dir="0" index="0" bw="31" slack="0"/>
+<pin id="164" dir="0" index="1" bw="1" slack="0"/>
+<pin id="165" dir="1" index="2" bw="31" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="p_reg2mem_0_i_i/3 "/>
+</bind>
+</comp>
+
+<comp id="168" class="1004" name="tmp_1_fu_168">
+<pin_list>
+<pin id="169" dir="0" index="0" bw="31" slack="0"/>
+<pin id="170" dir="0" index="1" bw="32" slack="0"/>
+<pin id="171" dir="0" index="2" bw="1" slack="0"/>
+<pin id="172" dir="0" index="3" bw="6" slack="0"/>
+<pin id="173" dir="1" index="4" bw="31" slack="0"/>
+</pin_list>
+<bind>
+<opcode="partselect(1002) " fcode="partselect"/>
+<opset="tmp_1/3 "/>
+</bind>
+</comp>
+
+<comp id="178" class="1004" name="icmp_fu_178">
+<pin_list>
+<pin id="179" dir="0" index="0" bw="31" slack="0"/>
+<pin id="180" dir="0" index="1" bw="31" slack="0"/>
+<pin id="181" dir="1" index="2" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp/3 "/>
+</bind>
+</comp>
+
+<comp id="184" class="1004" name="tmp_4_fu_184">
+<pin_list>
+<pin id="185" dir="0" index="0" bw="32" slack="0"/>
+<pin id="186" dir="0" index="1" bw="32" slack="0"/>
+<pin id="187" dir="1" index="2" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="tmp_4/3 "/>
+</bind>
+</comp>
+
+<comp id="190" class="1004" name="p_0_load_load_fu_190">
+<pin_list>
+<pin id="191" dir="0" index="0" bw="32" slack="3"/>
+<pin id="192" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="p_0_load/4 "/>
+</bind>
+</comp>
+
+<comp id="194" class="1005" name="p_0_reg_194">
+<pin_list>
+<pin id="195" dir="0" index="0" bw="32" slack="2"/>
+<pin id="196" dir="1" index="1" bw="32" slack="2"/>
+</pin_list>
+<bind>
+<opset="p_0 "/>
+</bind>
+</comp>
+
+<comp id="200" class="1005" name="arg_n_elements_reg_200">
+<pin_list>
+<pin id="201" dir="0" index="0" bw="32" slack="1"/>
+<pin id="202" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="arg_n_elements "/>
+</bind>
+</comp>
+
+<comp id="206" class="1005" name="gmem_addr_reg_206">
+<pin_list>
+<pin id="207" dir="0" index="0" bw="32" slack="1"/>
+<pin id="208" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="gmem_addr "/>
+</bind>
+</comp>
+
+<comp id="212" class="1005" name="tmp_2_reg_212">
+<pin_list>
+<pin id="213" dir="0" index="0" bw="1" slack="1"/>
+<pin id="214" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="tmp_2 "/>
+</bind>
+</comp>
+
+<comp id="216" class="1005" name="p_reg2mem_0_i_i_reg_216">
+<pin_list>
+<pin id="217" dir="0" index="0" bw="31" slack="0"/>
+<pin id="218" dir="1" index="1" bw="31" slack="0"/>
+</pin_list>
+<bind>
+<opset="p_reg2mem_0_i_i "/>
+</bind>
+</comp>
+
+<comp id="221" class="1005" name="icmp_reg_221">
+<pin_list>
+<pin id="222" dir="0" index="0" bw="1" slack="1"/>
+<pin id="223" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="icmp "/>
+</bind>
+</comp>
+
+<comp id="225" class="1005" name="tmp_4_reg_225">
+<pin_list>
+<pin id="226" dir="0" index="0" bw="1" slack="1"/>
+<pin id="227" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="tmp_4 "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="77"><net_src comp="12" pin="0"/><net_sink comp="74" pin=0"/></net>
+
+<net id="82"><net_src comp="14" pin="0"/><net_sink comp="78" pin=0"/></net>
+
+<net id="83"><net_src comp="6" pin="0"/><net_sink comp="78" pin=1"/></net>
+
+<net id="88"><net_src comp="22" pin="0"/><net_sink comp="84" pin=0"/></net>
+
+<net id="89"><net_src comp="8" pin="0"/><net_sink comp="84" pin=1"/></net>
+
+<net id="95"><net_src comp="48" pin="0"/><net_sink comp="90" pin=0"/></net>
+
+<net id="100"><net_src comp="54" pin="0"/><net_sink comp="96" pin=0"/></net>
+
+<net id="101"><net_src comp="4" pin="0"/><net_sink comp="96" pin=1"/></net>
+
+<net id="106"><net_src comp="60" pin="0"/><net_sink comp="102" pin=0"/></net>
+
+<net id="107"><net_src comp="2" pin="0"/><net_sink comp="102" pin=1"/></net>
+
+<net id="114"><net_src comp="68" pin="0"/><net_sink comp="108" pin=0"/></net>
+
+<net id="115"><net_src comp="70" pin="0"/><net_sink comp="108" pin=3"/></net>
+
+<net id="116"><net_src comp="72" pin="0"/><net_sink comp="90" pin=0"/></net>
+
+<net id="120"><net_src comp="50" pin="0"/><net_sink comp="117" pin=0"/></net>
+
+<net id="127"><net_src comp="117" pin="1"/><net_sink comp="121" pin=0"/></net>
+
+<net id="132"><net_src comp="102" pin="2"/><net_sink comp="128" pin=0"/></net>
+
+<net id="139"><net_src comp="16" pin="0"/><net_sink comp="133" pin=0"/></net>
+
+<net id="140"><net_src comp="78" pin="2"/><net_sink comp="133" pin=1"/></net>
+
+<net id="141"><net_src comp="18" pin="0"/><net_sink comp="133" pin=2"/></net>
+
+<net id="142"><net_src comp="20" pin="0"/><net_sink comp="133" pin=3"/></net>
+
+<net id="146"><net_src comp="133" pin="4"/><net_sink comp="143" pin=0"/></net>
+
+<net id="151"><net_src comp="0" pin="0"/><net_sink comp="147" pin=0"/></net>
+
+<net id="152"><net_src comp="143" pin="1"/><net_sink comp="147" pin=1"/></net>
+
+<net id="156"><net_src comp="121" pin="4"/><net_sink comp="153" pin=0"/></net>
+
+<net id="161"><net_src comp="153" pin="1"/><net_sink comp="157" pin=0"/></net>
+
+<net id="166"><net_src comp="121" pin="4"/><net_sink comp="162" pin=0"/></net>
+
+<net id="167"><net_src comp="52" pin="0"/><net_sink comp="162" pin=1"/></net>
+
+<net id="174"><net_src comp="56" pin="0"/><net_sink comp="168" pin=0"/></net>
+
+<net id="175"><net_src comp="96" pin="2"/><net_sink comp="168" pin=1"/></net>
+
+<net id="176"><net_src comp="12" pin="0"/><net_sink comp="168" pin=2"/></net>
+
+<net id="177"><net_src comp="58" pin="0"/><net_sink comp="168" pin=3"/></net>
+
+<net id="182"><net_src comp="168" pin="4"/><net_sink comp="178" pin=0"/></net>
+
+<net id="183"><net_src comp="50" pin="0"/><net_sink comp="178" pin=1"/></net>
+
+<net id="188"><net_src comp="96" pin="2"/><net_sink comp="184" pin=0"/></net>
+
+<net id="189"><net_src comp="34" pin="0"/><net_sink comp="184" pin=1"/></net>
+
+<net id="193"><net_src comp="190" pin="1"/><net_sink comp="108" pin=2"/></net>
+
+<net id="197"><net_src comp="74" pin="1"/><net_sink comp="194" pin=0"/></net>
+
+<net id="198"><net_src comp="194" pin="1"/><net_sink comp="128" pin=1"/></net>
+
+<net id="199"><net_src comp="194" pin="1"/><net_sink comp="190" pin=0"/></net>
+
+<net id="203"><net_src comp="84" pin="2"/><net_sink comp="200" pin=0"/></net>
+
+<net id="204"><net_src comp="200" pin="1"/><net_sink comp="90" pin=2"/></net>
+
+<net id="205"><net_src comp="200" pin="1"/><net_sink comp="157" pin=1"/></net>
+
+<net id="209"><net_src comp="147" pin="2"/><net_sink comp="206" pin=0"/></net>
+
+<net id="210"><net_src comp="206" pin="1"/><net_sink comp="90" pin=1"/></net>
+
+<net id="211"><net_src comp="206" pin="1"/><net_sink comp="108" pin=1"/></net>
+
+<net id="215"><net_src comp="157" pin="2"/><net_sink comp="212" pin=0"/></net>
+
+<net id="219"><net_src comp="162" pin="2"/><net_sink comp="216" pin=0"/></net>
+
+<net id="220"><net_src comp="216" pin="1"/><net_sink comp="121" pin=2"/></net>
+
+<net id="224"><net_src comp="178" pin="2"/><net_sink comp="221" pin=0"/></net>
+
+<net id="228"><net_src comp="184" pin="2"/><net_sink comp="225" pin=0"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: gmem | {2 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 }
+ - Input state : 
+	Port: krnl_write : pipe_c | {3 }
+	Port: krnl_write : pipe_c_count | {3 }
+	Port: krnl_write : c | {1 }
+	Port: krnl_write : n_elements | {1 }
+  - Chain level:
+	State 1
+		tmp_6 : 1
+		gmem_addr : 2
+	State 2
+	State 3
+		i_0_reg2mem5_0_i_i_cast : 1
+		tmp_2 : 2
+		p_reg2mem_0_i_i : 1
+		StgValue_160 : 3
+		icmp : 1
+		StgValue_164 : 2
+		StgValue_169 : 1
+	State 4
+		StgValue_176 : 1
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+	State 65
+	State 66
+	State 67
+	State 68
+	State 69
+	State 70
+	State 71
+	State 72
+	State 73
+	State 74
+	State 75
+	State 76
+	State 77
+	State 78
+	State 79
+	State 80
+	State 81
+	State 82
+	State 83
+	State 84
+	State 85
+	State 86
+	State 87
+	State 88
+	State 89
+	State 90
+	State 91
+	State 92
+	State 93
+	State 94
+	State 95
+	State 96
+	State 97
+	State 98
+	State 99
+	State 100
+	State 101
+	State 102
+	State 103
+	State 104
+	State 105
+	State 106
+	State 107
+	State 108
+	State 109
+	State 110
+	State 111
+	State 112
+	State 113
+	State 114
+	State 115
+	State 116
+	State 117
+	State 118
+	State 119
+	State 120
+	State 121
+	State 122
+	State 123
+	State 124
+	State 125
+	State 126
+	State 127
+	State 128
+	State 129
+	State 130
+	State 131
+	State 132
+	State 133
+	State 134
+	State 135
+	State 136
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|--------------------------------|---------|---------|
+| Operation|         Functional Unit        |    FF   |   LUT   |
+|----------|--------------------------------|---------|---------|
+|          |          tmp_2_fu_157          |    0    |    18   |
+|   icmp   |           icmp_fu_178          |    0    |    18   |
+|          |          tmp_4_fu_184          |    0    |    18   |
+|----------|--------------------------------|---------|---------|
+|    add   |     p_reg2mem_0_i_i_fu_162     |    0    |    38   |
+|----------|--------------------------------|---------|---------|
+|          |        c_read_read_fu_78       |    0    |    0    |
+|   read   |    arg_n_elements_read_fu_84   |    0    |    0    |
+|          |         grp_read_fu_96         |    0    |    0    |
+|          |         grp_read_fu_102        |    0    |    0    |
+|----------|--------------------------------|---------|---------|
+| writeresp|       grp_writeresp_fu_90      |    0    |    0    |
+|----------|--------------------------------|---------|---------|
+|   write  |    StgValue_176_write_fu_108   |    0    |    0    |
+|----------|--------------------------------|---------|---------|
+|partselect|           tmp_fu_133           |    0    |    0    |
+|          |          tmp_1_fu_168          |    0    |    0    |
+|----------|--------------------------------|---------|---------|
+|   zext   |          tmp_6_fu_143          |    0    |    0    |
+|          | i_0_reg2mem5_0_i_i_cast_fu_153 |    0    |    0    |
+|----------|--------------------------------|---------|---------|
+|   Total  |                                |    0    |    92   |
+|----------|--------------------------------|---------|---------|
+
+Memories:
+N/A
+
+* Register list:
++--------------------------+--------+
+|                          |   FF   |
++--------------------------+--------+
+|  arg_n_elements_reg_200  |   32   |
+|     gmem_addr_reg_206    |   32   |
+|i_0_reg2mem5_0_i_i_reg_117|   31   |
+|       icmp_reg_221       |    1   |
+|        p_0_reg_194       |   32   |
+|  p_reg2mem_0_i_i_reg_216 |   31   |
+|       tmp_2_reg_212      |    1   |
+|       tmp_4_reg_225      |    1   |
++--------------------------+--------+
+|           Total          |   161  |
++--------------------------+--------+
+
+* Multiplexer (MUX) list: 
+|---------------------|------|------|------|--------||---------|
+|         Comp        |  Pin | Size |  BW  | S x BW ||  Delay  |
+|---------------------|------|------|------|--------||---------|
+| grp_writeresp_fu_90 |  p0  |   2  |   1  |    2   |
+|---------------------|------|------|------|--------||---------|
+|        Total        |      |      |      |    2   ||   0.85  |
+|---------------------|------|------|------|--------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+
+|           |  Delay |   FF   |   LUT  |
++-----------+--------+--------+--------+
+|  Function |    -   |    0   |   92   |
+|   Memory  |    -   |    -   |    -   |
+|Multiplexer|    0   |    -   |    -   |
+|  Register |    -   |   161  |    -   |
++-----------+--------+--------+--------+
+|   Total   |    0   |   161  |   92   |
++-----------+--------+--------+--------+

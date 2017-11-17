@@ -1,0 +1,2 @@
+performing high-level synthesis for kernel: krnl_write
+Log file:/home/yanghui/Desktop/myProject/multiple_krnl/_xocc_compile_krnl_vadd_krnl_vadd.hw_emu.dir/impl/kernels/krnl_write/vivado_hls.log

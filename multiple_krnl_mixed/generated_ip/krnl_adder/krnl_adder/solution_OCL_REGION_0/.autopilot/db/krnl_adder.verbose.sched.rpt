@@ -1,0 +1,336 @@
+
+
+================================================================
+== Vivado HLS Report for 'krnl_adder'
+================================================================
+* Date:           Thu Nov 16 23:15:44 2017
+
+* Version:        2017.2 (Build 1909853 on Wed Aug 23 11:51:38 MDT 2017)
+* Project:        krnl_adder
+* Solution:       solution_OCL_REGION_0
+* Product family: virtex7
+* Target device:  xc7vx690tffg1157-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   5.00|      1.51|        1.35|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |    ?|    ?|         2|          1|          1|     ?|    yes   |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 4
+* Pipeline: 1
+  Pipeline-0: II = 1, D = 2, States = { 2 3 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	4  / (!tmp_1)
+	3  / (tmp_1)
+3 --> 
+	2  / true
+4 --> 
+* FSM state operations: 
+
+ <State 1>: 1.00ns
+ST_1: p_0 (12)  [1/1] 0.00ns
+:0  %p_0 = alloca i32
+
+ST_1: p_01 (13)  [1/1] 0.00ns
+:1  %p_01 = alloca i32
+
+ST_1: StgValue_7 (14)  [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecBitsMap(i32 addrspace(1)* %gmem), !map !20
+
+ST_1: StgValue_8 (15)  [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecBitsMap(i32 addrspace(4)* %pipe_a), !map !26
+
+ST_1: StgValue_9 (16)  [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_SpecBitsMap(i32 %pipe_a_count), !map !30
+
+ST_1: StgValue_10 (17)  [1/1] 0.00ns
+:5  call void (...)* @_ssdm_op_SpecBitsMap(i32 addrspace(4)* %pipe_b), !map !36
+
+ST_1: StgValue_11 (18)  [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_SpecBitsMap(i32 %pipe_b_count), !map !40
+
+ST_1: StgValue_12 (19)  [1/1] 0.00ns
+:7  call void (...)* @_ssdm_op_SpecBitsMap(i32 addrspace(4)* %pipe_c), !map !44
+
+ST_1: StgValue_13 (20)  [1/1] 0.00ns
+:8  call void (...)* @_ssdm_op_SpecBitsMap(i32 %pipe_c_count), !map !48
+
+ST_1: StgValue_14 (21)  [1/1] 0.00ns
+:9  call void (...)* @_ssdm_op_SpecBitsMap(i32* %n_elements), !map !52
+
+ST_1: StgValue_15 (22)  [1/1] 0.00ns
+:10  call void (...)* @_ssdm_op_SpecBitsMap(i64* %p_xcl_gv_pipe_a), !map !56
+
+ST_1: StgValue_16 (23)  [1/1] 0.00ns
+:11  call void (...)* @_ssdm_op_SpecBitsMap(i64* %p_xcl_gv_pipe_b), !map !60
+
+ST_1: StgValue_17 (24)  [1/1] 0.00ns
+:12  call void (...)* @_ssdm_op_SpecBitsMap(i64* %p_xcl_gv_pipe_c), !map !64
+
+ST_1: StgValue_18 (25)  [1/1] 0.00ns
+:13  call void (...)* @_ssdm_op_SpecTopModule([11 x i8]* @krnl_adder_str)
+
+ST_1: StgValue_19 (26)  [1/1] 0.00ns  loc: krnl_adder_compute_unit:56
+:14  call void (...)* @_ssdm_op_SpecInterface(i32 addrspace(4)* %pipe_a, [5 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+ST_1: StgValue_20 (27)  [1/1] 0.00ns  loc: krnl_adder_compute_unit:57
+:15  call void (...)* @_ssdm_op_SpecInterface(i32 addrspace(4)* %pipe_b, [5 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+ST_1: StgValue_21 (28)  [1/1] 0.00ns  loc: krnl_adder_compute_unit:58
+:16  call void (...)* @_ssdm_op_SpecInterface(i32 addrspace(4)* %pipe_c, [5 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+ST_1: StgValue_22 (29)  [1/1] 0.00ns  loc: krnl_adder_compute_unit:59
+:17  call void (...)* @_ssdm_op_SpecInterface(i32 addrspace(1)* %gmem, [6 x i8]* @p_str2, i32 0, i32 0, [1 x i8]* @p_str1, i32 128, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+ST_1: StgValue_23 (30)  [1/1] 0.00ns  loc: krnl_adder_compute_unit:60
+:18  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+ST_1: StgValue_24 (31)  [1/1] 0.00ns  loc: krnl_adder_compute_unit:61
+:19  call void (...)* @_ssdm_op_SpecInterface(i32* %n_elements, i64* %p_xcl_gv_pipe_a, i64* %p_xcl_gv_pipe_b, i64* %p_xcl_gv_pipe_c, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [8 x i8]* @p_str4, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+ST_1: arg_n_elements (32)  [1/1] 1.00ns  loc: krnl_adder_compute_unit:44
+:20  %arg_n_elements = call i32 @_ssdm_op_Read.s_axilite.i32P(i32* %n_elements)
+
+ST_1: StgValue_26 (33)  [1/1] 0.85ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:36
+:21  br label %1
+
+
+ <State 2>: 1.50ns
+ST_2: i_0_reg2mem10_0_i_i (35)  [1/1] 0.00ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:36
+:0  %i_0_reg2mem10_0_i_i = phi i31 [ 0, %0 ], [ %p_reg2mem_0_i_i, %__xcl_write_pipe.exit.i.i ]
+
+ST_2: i_0_reg2mem10_0_i_i_cast (36)  [1/1] 0.00ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:36
+:1  %i_0_reg2mem10_0_i_i_cast = zext i31 %i_0_reg2mem10_0_i_i to i32
+
+ST_2: tmp_1 (37)  [1/1] 1.26ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:36
+:2  %tmp_1 = icmp slt i32 %i_0_reg2mem10_0_i_i_cast, %arg_n_elements
+
+ST_2: p_reg2mem_0_i_i (38)  [1/1] 1.50ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:36
+:3  %p_reg2mem_0_i_i = add i31 %i_0_reg2mem10_0_i_i, 1
+
+ST_2: StgValue_31 (39)  [1/1] 0.00ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:36
+:4  br i1 %tmp_1, label %2, label %__AESL_call_work_item_NA6.exit
+
+ST_2: pipe_a_count_read (42)  [1/1] 0.00ns
+:1  %pipe_a_count_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %pipe_a_count) nounwind
+
+ST_2: tmp (43)  [1/1] 0.00ns
+:2  %tmp = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %pipe_a_count_read, i32 1, i32 31)
+
+ST_2: icmp (44)  [1/1] 1.26ns
+:3  %icmp = icmp eq i31 %tmp, 0
+
+ST_2: StgValue_35 (45)  [1/1] 0.00ns
+:4  br i1 %icmp, label %4, label %3
+
+ST_2: pipe_a_read (47)  [1/1] 0.00ns
+:0  %pipe_a_read = call i32 @_ssdm_op_Read.axis.volatile.i32P(i32 addrspace(4)* %pipe_a)
+
+ST_2: StgValue_37 (48)  [1/1] 0.85ns
+:1  store i32 %pipe_a_read, i32* %p_01
+
+ST_2: pipe_a_count_read_1 (51)  [1/1] 0.00ns
+:0  %pipe_a_count_read_1 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %pipe_a_count) nounwind
+
+ST_2: tmp_3 (52)  [1/1] 1.26ns
+:1  %tmp_3 = icmp eq i32 %pipe_a_count_read_1, 0
+
+ST_2: StgValue_40 (53)  [1/1] 0.00ns
+:2  br i1 %tmp_3, label %__xcl_read_pipe.exit.i.i, label %5
+
+ST_2: pipe_a_read_1 (55)  [1/1] 0.00ns
+:0  %pipe_a_read_1 = call i32 @_ssdm_op_Read.axis.volatile.i32P(i32 addrspace(4)* %pipe_a)
+
+ST_2: StgValue_42 (56)  [1/1] 0.85ns
+:1  store i32 %pipe_a_read_1, i32* %p_01
+
+ST_2: pipe_b_count_read (59)  [1/1] 0.00ns
+__xcl_read_pipe.exit.i.i:0  %pipe_b_count_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %pipe_b_count) nounwind
+
+ST_2: tmp_2 (60)  [1/1] 0.00ns
+__xcl_read_pipe.exit.i.i:1  %tmp_2 = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %pipe_b_count_read, i32 1, i32 31)
+
+ST_2: icmp5 (61)  [1/1] 1.26ns
+__xcl_read_pipe.exit.i.i:2  %icmp5 = icmp eq i31 %tmp_2, 0
+
+ST_2: StgValue_46 (62)  [1/1] 0.00ns
+__xcl_read_pipe.exit.i.i:3  br i1 %icmp5, label %7, label %6
+
+ST_2: pipe_b_read (64)  [1/1] 0.00ns
+:0  %pipe_b_read = call i32 @_ssdm_op_Read.axis.volatile.i32P(i32 addrspace(4)* %pipe_b)
+
+ST_2: StgValue_48 (65)  [1/1] 0.85ns
+:1  store i32 %pipe_b_read, i32* %p_0
+
+ST_2: pipe_b_count_read_1 (68)  [1/1] 0.00ns
+:0  %pipe_b_count_read_1 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %pipe_b_count) nounwind
+
+ST_2: tmp_5 (69)  [1/1] 1.26ns
+:1  %tmp_5 = icmp eq i32 %pipe_b_count_read_1, 0
+
+ST_2: StgValue_51 (70)  [1/1] 0.00ns
+:2  br i1 %tmp_5, label %__xcl_read_pipe.exit1.i.i, label %8
+
+ST_2: pipe_b_read_1 (72)  [1/1] 0.00ns
+:0  %pipe_b_read_1 = call i32 @_ssdm_op_Read.axis.volatile.i32P(i32 addrspace(4)* %pipe_b)
+
+ST_2: StgValue_53 (73)  [1/1] 0.85ns
+:1  store i32 %pipe_b_read_1, i32* %p_0
+
+ST_2: pipe_c_count_read (79)  [1/1] 0.00ns
+__xcl_read_pipe.exit1.i.i:3  %pipe_c_count_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %pipe_c_count) nounwind
+
+ST_2: tmp_4 (80)  [1/1] 0.00ns
+__xcl_read_pipe.exit1.i.i:4  %tmp_4 = call i25 @_ssdm_op_PartSelect.i25.i32.i32.i32(i32 %pipe_c_count_read, i32 7, i32 31)
+
+ST_2: icmp8 (81)  [1/1] 1.23ns
+__xcl_read_pipe.exit1.i.i:5  %icmp8 = icmp eq i25 %tmp_4, 0
+
+ST_2: StgValue_57 (82)  [1/1] 0.00ns
+__xcl_read_pipe.exit1.i.i:6  br i1 %icmp8, label %9, label %__xcl_write_pipe.exit.i.i
+
+
+ <State 3>: 1.51ns
+ST_3: StgValue_58 (41)  [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str5)
+
+ST_3: StgValue_59 (49)  [1/1] 0.00ns
+:2  br label %__xcl_read_pipe.exit.i.i
+
+ST_3: StgValue_60 (57)  [1/1] 0.00ns
+:2  br label %__xcl_read_pipe.exit.i.i
+
+ST_3: StgValue_61 (66)  [1/1] 0.00ns
+:2  br label %__xcl_read_pipe.exit1.i.i
+
+ST_3: StgValue_62 (74)  [1/1] 0.00ns
+:2  br label %__xcl_read_pipe.exit1.i.i
+
+ST_3: p_0_load (76)  [1/1] 0.00ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:40
+__xcl_read_pipe.exit1.i.i:0  %p_0_load = load i32* %p_0
+
+ST_3: p_01_load (77)  [1/1] 0.00ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:40
+__xcl_read_pipe.exit1.i.i:1  %p_01_load = load i32* %p_01
+
+ST_3: tmp_6 (78)  [1/1] 1.51ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:40
+__xcl_read_pipe.exit1.i.i:2  %tmp_6 = add nsw i32 %p_01_load, %p_0_load
+
+ST_3: StgValue_66 (84)  [1/1] 0.00ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:40
+:0  call void @_ssdm_op_Write.axis.volatile.i32P(i32 addrspace(4)* %pipe_c, i32 %tmp_6)
+
+ST_3: StgValue_67 (85)  [1/1] 0.00ns
+:1  br label %__xcl_write_pipe.exit.i.i
+
+ST_3: StgValue_68 (87)  [1/1] 0.00ns  loc: /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:36
+__xcl_write_pipe.exit.i.i:0  br label %1
+
+
+ <State 4>: 0.00ns
+ST_4: StgValue_69 (89)  [1/1] 0.00ns  loc: krnl_adder_compute_unit:66
+__AESL_call_work_item_NA6.exit:0  ret void
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5ns, clock uncertainty: 1.35ns.
+
+ <State 1>: 1ns
+The critical path consists of the following:
+	s_axi read on port 'n_elements' (krnl_adder_compute_unit:44) [32]  (1 ns)
+
+ <State 2>: 1.5ns
+The critical path consists of the following:
+	'phi' operation ('i_0_reg2mem10_0_i_i', /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:36) with incoming values : ('p_reg2mem_0_i_i', /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:36) [35]  (0 ns)
+	'add' operation ('p_reg2mem_0_i_i', /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:36) [38]  (1.5 ns)
+
+ <State 3>: 1.51ns
+The critical path consists of the following:
+	'load' operation ('p_0_load', /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:40) on local variable 'p_0' [76]  (0 ns)
+	'add' operation ('tmp_6', /home/yanghui/Desktop/myProject/multiple_krnl/krnl_vadd.cl:40) [78]  (1.51 ns)
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
