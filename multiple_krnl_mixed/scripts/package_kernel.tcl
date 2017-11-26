@@ -50,9 +50,10 @@ foreach up [ipx::get_user_parameters] {
 ipx::create_xgui_files [ipx::current_core]
 ipx::associate_bus_interfaces -busif m_axi_gmem -clock ap_clk [ipx::current_core]
 ipx::associate_bus_interfaces -busif s_axi_control -clock ap_clk [ipx::current_core]
-
-#ipx::add_bus_parameter FREQ_HZ [ipx::get_bus_interfaces S00_AXI_CLK -of_objects [ipx::current_core]] 
-#set_property value 200 [ipx::get_bus_parameters FREQ_HZ -of_objects [ipx::get_bus_interfaces S00_AXI_CLK -of_objects [ipx::current_core]]]
+# the below commands solves frequency does not match issue
+ipx::associate_bus_interfaces -busif pipe_a -clock ap_clk [ipx::current_core]
+ipx::associate_bus_interfaces -busif pipe_b -clock ap_clk [ipx::current_core]
+ipx::associate_bus_interfaces -busif pipe_c -clock ap_clk [ipx::current_core]
 
 set_property xpm_libraries {XPM_CDC XPM_MEMORY XPM_FIFO} [ipx::current_core]
 set_property supported_families { } [ipx::current_core]
